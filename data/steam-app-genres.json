@@ -1,0 +1,5475 @@
+{
+  "10": [
+    "Action"
+  ],
+  "440": [
+    "Action",
+    "Free To Play"
+  ],
+  "1530": [
+    "Indie"
+  ],
+  "2700": [
+    "Simulation",
+    "Strategy"
+  ],
+  "3400": [
+    "Casual"
+  ],
+  "3910": [
+    "Strategy"
+  ],
+  "4560": [
+    "Action",
+    "Strategy"
+  ],
+  "7660": [
+    "Strategy"
+  ],
+  "9850": [
+    "Simulation",
+    "Strategy"
+  ],
+  "10220": [
+    "Action"
+  ],
+  "11150": [
+    "Adventure"
+  ],
+  "12440": [
+    "Adventure"
+  ],
+  "12640": [
+    "RPG"
+  ],
+  "13580": [
+    "Action"
+  ],
+  "15320": [
+    "Simulation"
+  ],
+  "15900": [
+    "Casual"
+  ],
+  "17180": [
+    "Strategy"
+  ],
+  "20540": [
+    "Strategy"
+  ],
+  "23150": [
+    "Casual",
+    "Indie"
+  ],
+  "24240": [
+    "Action"
+  ],
+  "25600": [
+    "Indie",
+    "RPG"
+  ],
+  "26500": [
+    "Casual",
+    "Indie"
+  ],
+  "29130": [
+    "Indie",
+    "Casual"
+  ],
+  "31840": [
+    "Adventure"
+  ],
+  "32160": [
+    "Casual",
+    "Sports"
+  ],
+  "32760": [
+    "Simulation"
+  ],
+  "33760": [
+    "Casual"
+  ],
+  "35310": [
+    "Action",
+    "Racing"
+  ],
+  "38150": [
+    "Casual"
+  ],
+  "38490": [
+    "Action",
+    "Adventure"
+  ],
+  "39500": [
+    "Action",
+    "RPG"
+  ],
+  "40720": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "42210": [
+    "Adventure"
+  ],
+  "42960": [
+    "Strategy"
+  ],
+  "45400": [
+    "Indie"
+  ],
+  "46290": [
+    "Strategy"
+  ],
+  "46520": [
+    "Action",
+    "Indie"
+  ],
+  "46830": [
+    "Strategy"
+  ],
+  "50980": [
+    "Casual"
+  ],
+  "57000": [
+    "Action",
+    "Adventure"
+  ],
+  "58550": [
+    "Strategy"
+  ],
+  "61730": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "63710": [
+    "Action",
+    "Indie"
+  ],
+  "65530": [
+    "RPG",
+    "Strategy"
+  ],
+  "70100": [
+    "Simulation"
+  ],
+  "80340": [
+    "Adventure",
+    "Indie"
+  ],
+  "92300": [
+    "Action",
+    "Indie"
+  ],
+  "95300": [
+    "Action",
+    "Indie"
+  ],
+  "98300": [
+    "Action",
+    "Casual",
+    "Simulation",
+    "Strategy"
+  ],
+  "102400": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "108710": [
+    "Action",
+    "Adventure"
+  ],
+  "111300": [
+    "Action",
+    "Racing",
+    "Sports"
+  ],
+  "200370": [
+    "Casual",
+    "Strategy"
+  ],
+  "201070": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "202130": [
+    "Strategy"
+  ],
+  "204860": [
+    "Action",
+    "Strategy"
+  ],
+  "207250": [
+    "Indie",
+    "Strategy"
+  ],
+  "208710": [
+    "Action",
+    "Indie"
+  ],
+  "209630": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "211010": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "214340": [
+    "Adventure",
+    "Indie"
+  ],
+  "214910": [
+    "Action",
+    "Simulation"
+  ],
+  "215690": [
+    "Action",
+    "Indie"
+  ],
+  "216890": [
+    "Sports",
+    "Strategy"
+  ],
+  "218040": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "219190": [
+    "Action",
+    "Indie"
+  ],
+  "221260": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "222520": [
+    "Free To Play",
+    "Indie",
+    "Massively Multiplayer",
+    "RPG"
+  ],
+  "223430": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "226700": [
+    "Action",
+    "Indie",
+    "Massively Multiplayer",
+    "RPG",
+    "Free To Play"
+  ],
+  "227200": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "230070": [
+    "Indie",
+    "RPG"
+  ],
+  "230860": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "232050": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "233230": [
+    "Adventure",
+    "Indie"
+  ],
+  "233740": [
+    "Indie",
+    "Strategy"
+  ],
+  "234490": [
+    "Action",
+    "Indie",
+    "Racing"
+  ],
+  "235540": [
+    "Action",
+    "Indie"
+  ],
+  "236370": [
+    "Action",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Early Access"
+  ],
+  "237470": [
+    "Strategy"
+  ],
+  "238070": [
+    "Action"
+  ],
+  "238930": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "239840": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "241320": [
+    "Adventure",
+    "Indie"
+  ],
+  "242680": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "243040": [
+    "Simulation"
+  ],
+  "244030": [
+    "Simulation"
+  ],
+  "244810": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "246720": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "247140": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "248310": [
+    "Action",
+    "Indie"
+  ],
+  "248730": [
+    "Action",
+    "Indie"
+  ],
+  "249630": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "250380": [
+    "Adventure",
+    "Casual"
+  ],
+  "250760": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "251430": [
+    "Adventure",
+    "Indie"
+  ],
+  "251850": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "252250": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "252610": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "253250": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "253750": [
+    "Action",
+    "Indie"
+  ],
+  "254320": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "255070": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "256030": [
+    "Indie",
+    "RPG"
+  ],
+  "257990": [
+    "Casual",
+    "Indie"
+  ],
+  "259060": [
+    "Indie",
+    "Strategy"
+  ],
+  "259620": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "260000": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "260430": [
+    "Casual",
+    "Massively Multiplayer",
+    "Simulation",
+    "Free To Play"
+  ],
+  "262000": [
+    "Adventure"
+  ],
+  "262450": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "262920": [
+    "Action",
+    "Indie"
+  ],
+  "263360": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "263760": [
+    "Action",
+    "Indie",
+    "Simulation"
+  ],
+  "264220": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "264730": [
+    "Action",
+    "Indie"
+  ],
+  "265730": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "266110": [
+    "Action",
+    "Indie"
+  ],
+  "266510": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "267940": [
+    "Action",
+    "Racing"
+  ],
+  "268670": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "269210": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Massively Multiplayer",
+    "RPG"
+  ],
+  "269690": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "270170": [
+    "Free To Play",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "270630": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "304530": [
+    "Action"
+  ],
+  "322110": [
+    "Action",
+    "Indie"
+  ],
+  "359510": [
+    "Adventure",
+    "Indie"
+  ],
+  "378610": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "424830": [
+    "Action",
+    "Indie",
+    "Free To Play"
+  ],
+  "426000": [
+    "Indie",
+    "Simulation"
+  ],
+  "428900": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "429260": [
+    "Action",
+    "Casual"
+  ],
+  "429540": [
+    "Free To Play",
+    "Massively Multiplayer",
+    "Strategy"
+  ],
+  "429950": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "431120": [
+    "Indie",
+    "Strategy"
+  ],
+  "431450": [
+    "Action",
+    "Indie"
+  ],
+  "431710": [
+    "Adventure",
+    "Indie"
+  ],
+  "432120": [
+    "Strategy"
+  ],
+  "432420": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "432950": [
+    "Gore",
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "433350": [
+    "Action",
+    "Casual",
+    "Free To Play"
+  ],
+  "433650": [
+    "Simulation"
+  ],
+  "434020": [
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "434250": [
+    "Action",
+    "Indie"
+  ],
+  "434480": [
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "RPG"
+  ],
+  "434700": [
+    "Indie"
+  ],
+  "435000": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "435360": [
+    "Adventure",
+    "Indie"
+  ],
+  "436000": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "436390": [
+    "Action",
+    "Indie"
+  ],
+  "437740": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "438140": [
+    "Strategy"
+  ],
+  "438420": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "438790": [
+    "Action",
+    "Indie"
+  ],
+  "439550": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "440340": [
+    "Action"
+  ],
+  "440740": [
+    "Action",
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Strategy"
+  ],
+  "441280": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "442890": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "443530": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "444020": [
+    "Indie",
+    "Strategy"
+  ],
+  "444330": [
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "444640": [
+    "Action",
+    "Strategy",
+    "Free To Play"
+  ],
+  "445020": [
+    "Indie",
+    "Strategy"
+  ],
+  "445430": [
+    "RPG",
+    "Strategy"
+  ],
+  "446050": [
+    "Action",
+    "Indie"
+  ],
+  "446470": [
+    "Simulation"
+  ],
+  "446790": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "447170": [
+    "Adventure"
+  ],
+  "448020": [
+    "Action",
+    "Indie"
+  ],
+  "448300": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "448560": [
+    "Indie"
+  ],
+  "448800": [
+    "Indie",
+    "Strategy"
+  ],
+  "449050": [
+    "Casual",
+    "Sports"
+  ],
+  "449300": [
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy"
+  ],
+  "449560": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "450020": [
+    "Action",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "450440": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "451010": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "451540": [
+    "Action",
+    "Indie"
+  ],
+  "451880": [
+    "Casual",
+    "Indie"
+  ],
+  "452320": [
+    "Indie",
+    "Strategy"
+  ],
+  "452970": [
+    "Adventure",
+    "Indie",
+    "Free To Play"
+  ],
+  "453480": [
+    "Strategy",
+    "Free To Play"
+  ],
+  "453810": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "454030": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "454250": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "454610": [
+    "Action",
+    "Indie"
+  ],
+  "454950": [
+    "Adventure",
+    "Indie",
+    "Simulation"
+  ],
+  "455590": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "456140": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "457420": [
+    "Action",
+    "Indie",
+    "Simulation",
+    "Free To Play"
+  ],
+  "457730": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "458180": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "458540": [
+    "Casual",
+    "Indie"
+  ],
+  "458970": [
+    "Free To Play",
+    "Indie",
+    "Strategy"
+  ],
+  "459350": [
+    "Action",
+    "Indie"
+  ],
+  "459820": [
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "460250": [
+    "Casual",
+    "Indie"
+  ],
+  "460810": [
+    "Action"
+  ],
+  "461180": [
+    "Adventure",
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Massively Multiplayer",
+    "Simulation"
+  ],
+  "461430": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Massively Multiplayer",
+    "Racing",
+    "RPG",
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "461750": [
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Strategy"
+  ],
+  "461990": [
+    "Violent",
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "462530": [
+    "Adventure"
+  ],
+  "462910": [
+    "Casual",
+    "Indie"
+  ],
+  "463150": [
+    "Action",
+    "Indie"
+  ],
+  "463440": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "463870": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "464240": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "464630": [
+    "Casual"
+  ],
+  "465020": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "465360": [
+    "Action",
+    "Strategy"
+  ],
+  "465870": [
+    "Action"
+  ],
+  "466070": [
+    "Casual",
+    "Strategy"
+  ],
+  "466450": [
+    "Action",
+    "Adventure"
+  ],
+  "466820": [
+    "Action",
+    "Indie"
+  ],
+  "467270": [
+    "Action",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "467490": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "467820": [
+    "Action",
+    "Indie"
+  ],
+  "468160": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "468780": [
+    "Action",
+    "Indie",
+    "Racing",
+    "Sports"
+  ],
+  "469900": [
+    "Indie",
+    "Strategy"
+  ],
+  "470280": [
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "471160": [
+    "Casual",
+    "Indie",
+    "Sports"
+  ],
+  "471770": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "473480": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "473910": [
+    "Action",
+    "Indie",
+    "Simulation",
+    "Sports",
+    "Early Access"
+  ],
+  "474750": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "475490": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "476450": [
+    "Indie"
+  ],
+  "477120": [
+    "Action",
+    "Indie",
+    "Sports"
+  ],
+  "477800": [
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Simulation"
+  ],
+  "479150": [
+    "Casual",
+    "Indie"
+  ],
+  "480690": [
+    "Action",
+    "Casual"
+  ],
+  "484350": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "485230": [
+    "Casual",
+    "Indie"
+  ],
+  "485450": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "485680": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "485920": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "486320": [
+    "Indie",
+    "Strategy"
+  ],
+  "486550": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "487000": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "487530": [
+    "Casual",
+    "Indie"
+  ],
+  "488280": [
+    "Casual",
+    "Indie"
+  ],
+  "488770": [
+    "Adventure",
+    "Indie"
+  ],
+  "489120": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "489580": [
+    "Action",
+    "Indie"
+  ],
+  "490080": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "490510": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Sports",
+    "Strategy"
+  ],
+  "491280": [
+    "Action",
+    "Racing",
+    "Simulation",
+    "Sports"
+  ],
+  "491650": [
+    "Indie"
+  ],
+  "492170": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "492540": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "493080": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "493480": [
+    "Action",
+    "RPG",
+    "Early Access"
+  ],
+  "493820": [
+    "Action",
+    "Indie"
+  ],
+  "494230": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "494580": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Racing"
+  ],
+  "494970": [
+    "Casual",
+    "Indie"
+  ],
+  "495350": [
+    "Action",
+    "Adventure",
+    "Massively Multiplayer"
+  ],
+  "495780": [
+    "Casual",
+    "Indie"
+  ],
+  "496160": [
+    "Action",
+    "Racing"
+  ],
+  "496380": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "496660": [
+    "Nudity",
+    "Violent",
+    "Gore",
+    "Action",
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "496950": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "497260": [
+    "Casual",
+    "Simulation"
+  ],
+  "497580": [
+    "Adventure",
+    "Casual"
+  ],
+  "497870": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "498370": [
+    "Casual",
+    "Indie",
+    "Sports"
+  ],
+  "498720": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Strategy",
+    "Free To Play"
+  ],
+  "499330": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "499890": [
+    "Action",
+    "Indie"
+  ],
+  "500320": [
+    "Adventure",
+    "Indie"
+  ],
+  "500690": [
+    "Indie",
+    "Strategy"
+  ],
+  "501050": [
+    "Casual",
+    "Free To Play"
+  ],
+  "501400": [
+    "Action",
+    "Indie",
+    "Free To Play"
+  ],
+  "501930": [
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "502230": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "502470": [
+    "Casual",
+    "Simulation",
+    "Strategy"
+  ],
+  "502780": [
+    "Adventure",
+    "Indie"
+  ],
+  "503100": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "503450": [
+    "Adventure",
+    "RPG"
+  ],
+  "503750": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "504110": [
+    "Adventure",
+    "RPG"
+  ],
+  "504450": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "504840": [
+    "Casual",
+    "Indie"
+  ],
+  "505330": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "506470": [
+    "Action",
+    "Indie"
+  ],
+  "506900": [
+    "Adventure",
+    "Indie"
+  ],
+  "507390": [
+    "Adventure",
+    "Indie"
+  ],
+  "508350": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "508660": [
+    "Casual",
+    "Simulation",
+    "Strategy"
+  ],
+  "508950": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "509290": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "509610": [
+    "Action",
+    "Casual",
+    "Simulation"
+  ],
+  "510360": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "510650": [
+    "Adventure",
+    "Casual"
+  ],
+  "510960": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "511330": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "511630": [
+    "Indie",
+    "RPG"
+  ],
+  "512020": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "512260": [
+    "Casual",
+    "Indie"
+  ],
+  "512720": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "513240": [
+    "Indie",
+    "Racing",
+    "Simulation"
+  ],
+  "513490": [
+    "Indie"
+  ],
+  "513770": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "514010": [
+    "Casual",
+    "Simulation",
+    "Sports",
+    "Strategy"
+  ],
+  "514340": [
+    "Action",
+    "Indie"
+  ],
+  "514580": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "514820": [
+    "Action",
+    "Casual"
+  ],
+  "515260": [
+    "Casual",
+    "Simulation"
+  ],
+  "516120": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "516590": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "516900": [
+    "Sports",
+    "Early Access"
+  ],
+  "517280": [
+    "Action",
+    "Adventure",
+    "Early Access"
+  ],
+  "517620": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "517990": [
+    "Simulation",
+    "Early Access"
+  ],
+  "518640": [
+    "Action",
+    "Adventure",
+    "RPG"
+  ],
+  "519170": [
+    "Adventure",
+    "Free To Play",
+    "RPG"
+  ],
+  "527340": [
+    "Action",
+    "Indie"
+  ],
+  "541210": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "546560": [
+    "Action",
+    "Adventure"
+  ],
+  "555150": [
+    "Adventure",
+    "Indie"
+  ],
+  "586960": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "658890": [
+    "Action",
+    "Indie"
+  ],
+  "723380": [
+    "Violent",
+    "Gore",
+    "Action"
+  ],
+  "723810": [
+    "Action",
+    "Adventure",
+    "Early Access"
+  ],
+  "724110": [
+    "Indie",
+    "Strategy"
+  ],
+  "724450": [
+    "Action",
+    "Adventure",
+    "Casual"
+  ],
+  "724750": [
+    "Adventure",
+    "Indie"
+  ],
+  "725080": [
+    "Casual",
+    "Indie"
+  ],
+  "725480": [
+    "Action",
+    "Indie"
+  ],
+  "725960": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Sports",
+    "Early Access"
+  ],
+  "726300": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "726580": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Sports",
+    "Early Access"
+  ],
+  "726910": [
+    "Adventure",
+    "Casual",
+    "Free To Play"
+  ],
+  "727200": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "727540": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "727850": [
+    "Action",
+    "Indie"
+  ],
+  "728240": [
+    "Adventure",
+    "RPG"
+  ],
+  "728990": [
+    "Casual",
+    "Indie",
+    "Racing"
+  ],
+  "729340": [
+    "Casual",
+    "Indie"
+  ],
+  "729780": [
+    "Adventure",
+    "Casual"
+  ],
+  "730190": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Simulation"
+  ],
+  "730620": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "731120": [
+    "Action",
+    "Casual",
+    "Simulation",
+    "Sports"
+  ],
+  "731510": [
+    "Violent",
+    "Gore",
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "731860": [
+    "Casual",
+    "Indie"
+  ],
+  "732240": [
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "732770": [
+    "Action",
+    "Indie"
+  ],
+  "733510": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "733790": [
+    "Adventure",
+    "RPG",
+    "Simulation"
+  ],
+  "734440": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "734890": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "735460": [
+    "Casual",
+    "Free To Play",
+    "Early Access"
+  ],
+  "736110": [
+    "Adventure",
+    "Indie"
+  ],
+  "736460": [
+    "Massively Multiplayer",
+    "Simulation"
+  ],
+  "736910": [
+    "Action",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "737510": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "737890": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "738350": [
+    "Casual",
+    "Simulation",
+    "Early Access"
+  ],
+  "738620": [
+    "Casual",
+    "Indie"
+  ],
+  "739010": [
+    "Free To Play",
+    "Indie"
+  ],
+  "739410": [
+    "Action",
+    "Indie"
+  ],
+  "739910": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "740220": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "740450": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "741110": [
+    "Indie"
+  ],
+  "741520": [
+    "Adventure",
+    "Indie"
+  ],
+  "742230": [
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "742630": [
+    "Action",
+    "Casual",
+    "Free To Play"
+  ],
+  "743330": [
+    "Action",
+    "Indie"
+  ],
+  "743660": [
+    "Action",
+    "Indie"
+  ],
+  "744040": [
+    "Indie",
+    "Racing"
+  ],
+  "744420": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "744690": [
+    "Simulation"
+  ],
+  "745010": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "745400": [
+    "Action",
+    "Indie"
+  ],
+  "745710": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "745930": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "746240": [
+    "Action",
+    "Indie",
+    "Simulation"
+  ],
+  "746560": [
+    "Indie",
+    "Simulation"
+  ],
+  "746880": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "747230": [
+    "Simulation",
+    "Strategy"
+  ],
+  "747620": [
+    "Action",
+    "Indie"
+  ],
+  "747930": [
+    "Action",
+    "Indie"
+  ],
+  "748320": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "748670": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Sports"
+  ],
+  "748990": [
+    "Action",
+    "Indie"
+  ],
+  "749340": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "749720": [
+    "Action",
+    "Indie",
+    "Racing",
+    "Simulation"
+  ],
+  "749980": [
+    "Adventure",
+    "Indie"
+  ],
+  "750360": [
+    "Adventure",
+    "Free To Play"
+  ],
+  "750780": [
+    "Casual"
+  ],
+  "751230": [
+    "Action",
+    "Indie"
+  ],
+  "751480": [
+    "Action",
+    "Casual"
+  ],
+  "751780": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Simulation"
+  ],
+  "752070": [
+    "Violent",
+    "Action",
+    "Early Access"
+  ],
+  "752550": [
+    "Action",
+    "Indie"
+  ],
+  "752850": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "753370": [
+    "Action"
+  ],
+  "753660": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "754150": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "754510": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "755140": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "755520": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Sports",
+    "Strategy"
+  ],
+  "755830": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "756230": [
+    "Violent",
+    "Indie"
+  ],
+  "756560": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "756890": [
+    "Action",
+    "Indie",
+    "Free To Play"
+  ],
+  "757290": [
+    "Casual",
+    "Indie"
+  ],
+  "757530": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "758140": [
+    "Action",
+    "Indie"
+  ],
+  "758470": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "758680": [
+    "Action",
+    "Indie"
+  ],
+  "759080": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "759860": [
+    "Indie",
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Strategy"
+  ],
+  "760240": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "760630": [
+    "Simulation",
+    "Sports"
+  ],
+  "760980": [
+    "Action",
+    "Free To Play",
+    "Indie",
+    "Strategy"
+  ],
+  "761170": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "761620": [
+    "Adventure",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "761920": [
+    "Action",
+    "Indie"
+  ],
+  "762250": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Sports",
+    "Strategy",
+    "Early Access"
+  ],
+  "762670": [
+    "Action"
+  ],
+  "763030": [
+    "Adventure",
+    "Indie"
+  ],
+  "763340": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "763730": [
+    "Action",
+    "Indie"
+  ],
+  "764090": [
+    "Action",
+    "Indie"
+  ],
+  "764510": [
+    "Casual",
+    "Simulation",
+    "Strategy"
+  ],
+  "764870": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "765180": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "765470": [
+    "Indie",
+    "Strategy"
+  ],
+  "765710": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "766090": [
+    "Adventure",
+    "Casual",
+    "Free To Play",
+    "Indie"
+  ],
+  "766650": [
+    "Action",
+    "Free To Play",
+    "Sports",
+    "Early Access"
+  ],
+  "767030": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "767420": [
+    "Casual",
+    "Simulation",
+    "Free To Play"
+  ],
+  "767930": [
+    "Action",
+    "Indie"
+  ],
+  "768450": [
+    "Adventure",
+    "Simulation"
+  ],
+  "768840": [
+    "Action",
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Racing"
+  ],
+  "769230": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Early Access"
+  ],
+  "769600": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Simulation",
+    "Early Access"
+  ],
+  "770020": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "770370": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "770810": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "771130": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "771430": [
+    "Action",
+    "Adventure",
+    "Strategy"
+  ],
+  "771810": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "772200": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "772440": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "772730": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "773370": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "773610": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "773930": [
+    "Action",
+    "Casual",
+    "Simulation"
+  ],
+  "774261": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "774511": [
+    "Action",
+    "RPG",
+    "Strategy"
+  ],
+  "775270": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "775760": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "776140": [
+    "Violent",
+    "Gore",
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "776440": [
+    "Action",
+    "Indie"
+  ],
+  "776820": [
+    "Indie",
+    "Simulation"
+  ],
+  "777170": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "777430": [
+    "Simulation",
+    "Sports"
+  ],
+  "777770": [
+    "Strategy"
+  ],
+  "778150": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "778470": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "778760": [
+    "Adventure",
+    "Casual",
+    "Simulation"
+  ],
+  "779070": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "779330": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "779700": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "780130": [
+    "Indie",
+    "Simulation"
+  ],
+  "780400": [
+    "Action",
+    "Casual",
+    "Sports"
+  ],
+  "780820": [
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "781240": [
+    "Action"
+  ],
+  "781630": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "781860": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "782160": [
+    "Violent",
+    "Gore",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Early Access"
+  ],
+  "782490": [
+    "Action",
+    "Casual",
+    "Free To Play",
+    "Indie"
+  ],
+  "783170": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "783410": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "783940": [
+    "Adventure",
+    "Indie"
+  ],
+  "785050": [
+    "Adventure",
+    "Indie"
+  ],
+  "785740": [
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "785950": [
+    "Action",
+    "Adventure"
+  ],
+  "786290": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "786580": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "786960": [
+    "Simulation",
+    "Early Access"
+  ],
+  "787260": [
+    "Casual",
+    "Indie"
+  ],
+  "787710": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "787960": [
+    "Casual",
+    "Indie"
+  ],
+  "788250": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "788540": [
+    "Simulation"
+  ],
+  "788870": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "789260": [
+    "Casual",
+    "Indie"
+  ],
+  "789620": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "RPG"
+  ],
+  "789840": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "790080": [
+    "Indie",
+    "Racing",
+    "Early Access"
+  ],
+  "790410": [
+    "Adventure",
+    "Casual",
+    "RPG"
+  ],
+  "790790": [
+    "Casual",
+    "Free To Play",
+    "Indie"
+  ],
+  "791140": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "791400": [
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "791880": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "792200": [
+    "Action",
+    "Adventure",
+    "Free To Play",
+    "Indie",
+    "Massively Multiplayer",
+    "RPG",
+    "Early Access"
+  ],
+  "792570": [
+    "Free To Play",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "792870": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "793180": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy"
+  ],
+  "793460": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "793820": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "794230": [
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "794600": [
+    "Action",
+    "Free To Play"
+  ],
+  "794940": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "795440": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "796030": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "796340": [
+    "Action",
+    "Adventure",
+    "Early Access"
+  ],
+  "796600": [
+    "Action"
+  ],
+  "796930": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Racing",
+    "RPG",
+    "Sports"
+  ],
+  "797300": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "797620": [
+    "Casual",
+    "Indie"
+  ],
+  "798460": [
+    "Action",
+    "Adventure",
+    "RPG"
+  ],
+  "798790": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "799260": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "799600": [
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "799910": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "898920": [
+    "Strategy"
+  ],
+  "922620": [
+    "Action",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "979060": [
+    "Action",
+    "Strategy"
+  ],
+  "990080": [
+    "Action",
+    "Adventure",
+    "RPG"
+  ],
+  "992310": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Free To Play"
+  ],
+  "998400": [
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "998850": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "999280": [
+    "Casual",
+    "Simulation"
+  ],
+  "999860": [
+    "Action",
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Early Access"
+  ],
+  "1000360": [
+    "Action",
+    "Early Access"
+  ],
+  "1000760": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1001140": [
+    "Casual"
+  ],
+  "1001570": [
+    "Indie"
+  ],
+  "1001970": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "1002290": [
+    "Casual",
+    "Free To Play",
+    "Indie"
+  ],
+  "1002540": [
+    "Indie"
+  ],
+  "1002890": [
+    "Free To Play",
+    "Indie",
+    "Massively Multiplayer",
+    "Early Access"
+  ],
+  "1003230": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "1003650": [
+    "Adventure",
+    "Indie"
+  ],
+  "1003960": [
+    "Adventure",
+    "Indie",
+    "Free To Play"
+  ],
+  "1004270": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "1005130": [
+    "Adventure",
+    "Casual",
+    "Strategy"
+  ],
+  "1005420": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1006220": [
+    "Indie"
+  ],
+  "1006770": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1007230": [
+    "Simulation",
+    "Early Access"
+  ],
+  "1007650": [
+    "RPG",
+    "Simulation"
+  ],
+  "1007980": [
+    "Casual",
+    "Indie"
+  ],
+  "1008340": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1008740": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1009100": [
+    "Action"
+  ],
+  "1009410": [
+    "Indie",
+    "RPG"
+  ],
+  "1009900": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "1010260": [
+    "Adventure",
+    "Indie"
+  ],
+  "1010600": [
+    "Adventure",
+    "Casual"
+  ],
+  "1010920": [
+    "Simulation"
+  ],
+  "1011260": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1011590": [
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "1011870": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1012280": [
+    "Action",
+    "Indie"
+  ],
+  "1012580": [
+    "Casual",
+    "Indie",
+    "Racing",
+    "Simulation",
+    "Sports"
+  ],
+  "1012870": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy"
+  ],
+  "1013200": [
+    "Indie"
+  ],
+  "1013630": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1013950": [
+    "Action"
+  ],
+  "1014270": [
+    "Indie",
+    "Strategy"
+  ],
+  "1014580": [
+    "Indie"
+  ],
+  "1014880": [
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy"
+  ],
+  "1015150": [
+    "RPG"
+  ],
+  "1015650": [
+    "Indie",
+    "Simulation"
+  ],
+  "1016010": [
+    "Indie",
+    "Simulation"
+  ],
+  "1016630": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1016850": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1017180": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1017580": [
+    "Adventure",
+    "Indie"
+  ],
+  "1017990": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1018380": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1018850": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1019170": [
+    "Casual",
+    "Indie"
+  ],
+  "1019590": [
+    "Action",
+    "Indie"
+  ],
+  "1020010": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1020420": [
+    "Free To Play",
+    "Indie"
+  ],
+  "1020650": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "1021100": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "1021690": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1022130": [
+    "Action",
+    "Indie"
+  ],
+  "1022610": [
+    "RPG"
+  ],
+  "1023040": [
+    "Indie",
+    "Simulation",
+    "Sports"
+  ],
+  "1023390": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1023750": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1024210": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1024630": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "1024970": [
+    "Action",
+    "Adventure",
+    "Free To Play",
+    "Indie"
+  ],
+  "1025360": [
+    "Action",
+    "Indie",
+    "Simulation"
+  ],
+  "1025620": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Free To Play"
+  ],
+  "1026160": [
+    "Adventure"
+  ],
+  "1026770": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1027480": [
+    "Action",
+    "Free To Play",
+    "Indie"
+  ],
+  "1027790": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1028110": [
+    "Casual",
+    "Strategy"
+  ],
+  "1028460": [
+    "Adventure",
+    "RPG"
+  ],
+  "1028730": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1028990": [
+    "Adventure",
+    "Strategy"
+  ],
+  "1029210": [
+    "Action",
+    "Indie"
+  ],
+  "1029640": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Early Access"
+  ],
+  "1029920": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1030310": [
+    "Adventure",
+    "RPG",
+    "Strategy"
+  ],
+  "1030780": [
+    "Action",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1031160": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1031480": [
+    "Indie"
+  ],
+  "1031730": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "1032090": [
+    "Indie",
+    "Simulation",
+    "Strategy",
+    "Free To Play"
+  ],
+  "1032440": [
+    "Casual",
+    "Indie"
+  ],
+  "1032740": [
+    "Indie",
+    "Simulation"
+  ],
+  "1033190": [
+    "Casual",
+    "Indie"
+  ],
+  "1033540": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Massively Multiplayer",
+    "RPG",
+    "Early Access"
+  ],
+  "1033910": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1034230": [
+    "Casual",
+    "Indie"
+  ],
+  "1034590": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1034950": [
+    "Indie",
+    "RPG"
+  ],
+  "1035430": [
+    "Casual"
+  ],
+  "1035750": [
+    "Adventure",
+    "Free To Play",
+    "Indie"
+  ],
+  "1035950": [
+    "Action",
+    "Indie"
+  ],
+  "1036370": [
+    "Action"
+  ],
+  "1036750": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1036990": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1037270": [
+    "Indie",
+    "Simulation"
+  ],
+  "1037760": [
+    "Indie",
+    "Strategy"
+  ],
+  "1038070": [
+    "Casual",
+    "Indie"
+  ],
+  "1038640": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1039200": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1039550": [
+    "Action",
+    "Indie",
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "1040070": [
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy"
+  ],
+  "1040490": [
+    "Action",
+    "Adventure",
+    "Free To Play",
+    "Indie",
+    "RPG"
+  ],
+  "1040910": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1041500": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1041940": [
+    "Strategy"
+  ],
+  "1042290": [
+    "Casual",
+    "Indie"
+  ],
+  "1042620": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Massively Multiplayer",
+    "Simulation",
+    "Early Access"
+  ],
+  "1043030": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1043360": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1043590": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1044060": [
+    "Action",
+    "Massively Multiplayer",
+    "Racing"
+  ],
+  "1044410": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1044750": [
+    "Casual",
+    "Indie"
+  ],
+  "1045060": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1045390": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "1045850": [
+    "Adventure",
+    "Casual",
+    "Free To Play",
+    "Indie"
+  ],
+  "1046370": [
+    "Free To Play",
+    "Indie"
+  ],
+  "1046740": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1047140": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1047560": [
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy"
+  ],
+  "1047860": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1048250": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1048570": [
+    "Adventure",
+    "Casual",
+    "Free To Play",
+    "Indie"
+  ],
+  "1048880": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1049220": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1049590": [
+    "Indie",
+    "Strategy",
+    "Free To Play"
+  ],
+  "1049870": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1050210": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1050580": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1051070": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1051330": [
+    "Casual",
+    "Indie"
+  ],
+  "1051710": [
+    "Casual"
+  ],
+  "1052070": [
+    "Adventure",
+    "Free To Play",
+    "Indie"
+  ],
+  "1052390": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1052660": [
+    "Casual",
+    "Indie"
+  ],
+  "1053160": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1053680": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1053970": [
+    "Casual",
+    "Indie"
+  ],
+  "1054340": [
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1054610": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1054900": [
+    "Adventure",
+    "Indie"
+  ],
+  "1055180": [
+    "Casual",
+    "Indie",
+    "Racing"
+  ],
+  "1055620": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1055990": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1056370": [
+    "Indie"
+  ],
+  "1056710": [
+    "Casual",
+    "Free To Play",
+    "Sports"
+  ],
+  "1057430": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Free To Play"
+  ],
+  "1057730": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1058060": [
+    "Indie",
+    "RPG"
+  ],
+  "1058370": [
+    "Adventure",
+    "Free To Play",
+    "Indie"
+  ],
+  "1058600": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1058830": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1059190": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1059500": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1059980": [
+    "Action",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1060310": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Simulation"
+  ],
+  "1060620": [
+    "Action",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "1061090": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1061360": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1061650": [
+    "Action",
+    "Casual",
+    "RPG"
+  ],
+  "1062000": [
+    "Indie",
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "1062210": [
+    "Indie"
+  ],
+  "1062670": [
+    "Indie"
+  ],
+  "1063100": [
+    "Action"
+  ],
+  "1063340": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1063660": [
+    "Action",
+    "Adventure"
+  ],
+  "1063910": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1064090": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1064420": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "1064690": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1065070": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1065460": [
+    "Casual",
+    "Indie"
+  ],
+  "1065850": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1066040": [
+    "Casual",
+    "Indie"
+  ],
+  "1066420": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "1066740": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1067100": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1067430": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1067850": [
+    "Adventure",
+    "Indie"
+  ],
+  "1068350": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Racing",
+    "RPG",
+    "Simulation",
+    "Free To Play",
+    "Early Access"
+  ],
+  "1068700": [
+    "Adventure",
+    "Casual"
+  ],
+  "1069130": [
+    "Casual",
+    "Indie",
+    "Early Access"
+  ],
+  "1069480": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Sports"
+  ],
+  "1069810": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1070160": [
+    "Racing",
+    "Early Access"
+  ],
+  "1070430": [
+    "Casual",
+    "Indie"
+  ],
+  "1070840": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Massively Multiplayer",
+    "RPG",
+    "Early Access"
+  ],
+  "1071170": [
+    "Indie"
+  ],
+  "1071510": [
+    "Action",
+    "Adventure"
+  ],
+  "1071880": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1072120": [
+    "Casual",
+    "Indie",
+    "Sports"
+  ],
+  "1072840": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1073130": [
+    "Action",
+    "Indie",
+    "Massively Multiplayer",
+    "Free To Play"
+  ],
+  "1073490": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Strategy",
+    "Early Access"
+  ],
+  "1073900": [
+    "Indie"
+  ],
+  "1074250": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1074530": [
+    "Adventure",
+    "Indie"
+  ],
+  "1075000": [
+    "Adventure",
+    "Free To Play",
+    "Indie"
+  ],
+  "1075740": [
+    "RPG",
+    "Strategy"
+  ],
+  "1076100": [
+    "Adventure",
+    "Casual",
+    "RPG",
+    "Strategy"
+  ],
+  "1076500": [
+    "Action",
+    "Free To Play",
+    "Indie",
+    "Massively Multiplayer",
+    "Strategy"
+  ],
+  "1076940": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "1077270": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1077530": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1077970": [
+    "Adventure",
+    "Indie"
+  ],
+  "1078360": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1078670": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1079160": [
+    "Action",
+    "Indie"
+  ],
+  "1079480": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "1079810": [
+    "Action",
+    "Free To Play"
+  ],
+  "1080150": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1080700": [
+    "Adventure",
+    "Indie"
+  ],
+  "1081160": [
+    "Indie"
+  ],
+  "1081460": [
+    "RPG"
+  ],
+  "1081740": [
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1082000": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1082500": [
+    "Adventure",
+    "Casual"
+  ],
+  "1082890": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1083310": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1083700": [
+    "Adventure"
+  ],
+  "1084120": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1084640": [
+    "Adventure",
+    "Indie"
+  ],
+  "1085040": [
+    "Action",
+    "Indie"
+  ],
+  "1085280": [
+    "Action",
+    "Casual"
+  ],
+  "1085730": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "1086010": [
+    "Indie"
+  ],
+  "1086470": [
+    "Casual",
+    "Free To Play",
+    "Simulation"
+  ],
+  "1086940": [
+    "Adventure",
+    "RPG",
+    "Strategy"
+  ],
+  "1087330": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Sports",
+    "Strategy"
+  ],
+  "1087780": [
+    "Action",
+    "Indie"
+  ],
+  "1088090": [
+    "Indie",
+    "Massively Multiplayer",
+    "RPG",
+    "Simulation",
+    "Early Access"
+  ],
+  "1088770": [
+    "Racing",
+    "Simulation"
+  ],
+  "1089090": [
+    "Action"
+  ],
+  "1089630": [
+    "Adventure",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1089880": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1090390": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1090680": [
+    "Action",
+    "Indie"
+  ],
+  "1091030": [
+    "Adventure",
+    "Simulation",
+    "Early Access"
+  ],
+  "1091330": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1091590": [
+    "Action",
+    "Indie"
+  ],
+  "1092270": [
+    "Casual"
+  ],
+  "1092710": [
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "1093130": [
+    "Adventure",
+    "Casual"
+  ],
+  "1093720": [
+    "Action",
+    "Free To Play",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "1094000": [
+    "Indie",
+    "Simulation"
+  ],
+  "1094320": [
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1094630": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1095040": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1095380": [
+    "Casual"
+  ],
+  "1095760": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1096100": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1096420": [
+    "Action",
+    "Indie"
+  ],
+  "1096720": [
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1097130": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Racing",
+    "Simulation",
+    "Sports"
+  ],
+  "1097420": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy"
+  ],
+  "1097670": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1097900": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1098220": [
+    "Adventure",
+    "Simulation"
+  ],
+  "1098500": [
+    "Indie",
+    "Strategy"
+  ],
+  "1098730": [
+    "Adventure",
+    "Indie"
+  ],
+  "1099170": [
+    "Action",
+    "Indie"
+  ],
+  "1099840": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Simulation"
+  ],
+  "1100260": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1101100": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1101360": [
+    "Action",
+    "Indie",
+    "Racing",
+    "Strategy"
+  ],
+  "1101780": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1102130": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1102580": [
+    "Indie",
+    "Simulation"
+  ],
+  "1103040": [
+    "Casual"
+  ],
+  "1103330": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "1103610": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Simulation"
+  ],
+  "1103870": [
+    "Action",
+    "Casual",
+    "Early Access"
+  ],
+  "1104200": [
+    "Simulation",
+    "Strategy"
+  ],
+  "1104490": [
+    "Action",
+    "Adventure"
+  ],
+  "1104870": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1105330": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1105600": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1106140": [
+    "Indie",
+    "Racing",
+    "Sports"
+  ],
+  "1106770": [
+    "Free To Play"
+  ],
+  "1107130": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1107510": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1108020": [
+    "Casual"
+  ],
+  "1108370": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1108820": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1109340": [
+    "Indie",
+    "Sports",
+    "Early Access"
+  ],
+  "1109700": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1110050": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1110560": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1111030": [
+    "Casual",
+    "Indie"
+  ],
+  "1111290": [
+    "Indie"
+  ],
+  "1111650": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Racing"
+  ],
+  "1111960": [
+    "Strategy"
+  ],
+  "1112350": [
+    "Action",
+    "Casual",
+    "RPG",
+    "Simulation"
+  ],
+  "1112690": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1113300": [
+    "Strategy"
+  ],
+  "1113650": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1113940": [
+    "Indie"
+  ],
+  "1114220": [
+    "RPG"
+  ],
+  "1114610": [
+    "Action",
+    "Indie",
+    "Sports",
+    "Early Access"
+  ],
+  "1114880": [
+    "Casual",
+    "Simulation"
+  ],
+  "1115420": [
+    "Action",
+    "RPG",
+    "Simulation"
+  ],
+  "1115830": [
+    "Casual"
+  ],
+  "1116180": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1116460": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1116660": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1116990": [
+    "RPG"
+  ],
+  "1117380": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1126320": [
+    "Indie"
+  ],
+  "1140170": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1150530": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1156990": [
+    "Adventure"
+  ],
+  "1160330": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Sports"
+  ],
+  "1166860": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Strategy"
+  ],
+  "1184760": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1210660": [
+    "Action",
+    "Indie"
+  ],
+  "1210970": [
+    "Action"
+  ],
+  "1211340": [
+    "Action",
+    "Indie",
+    "Simulation"
+  ],
+  "1211720": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1212040": [
+    "Casual",
+    "Indie"
+  ],
+  "1212410": [
+    "Adventure",
+    "Indie"
+  ],
+  "1212640": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Strategy",
+    "Early Access"
+  ],
+  "1213700": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1214050": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1214470": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1214720": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1215520": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1215860": [
+    "Simulation"
+  ],
+  "1216200": [
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "1217270": [
+    "Casual",
+    "Simulation"
+  ],
+  "1220990": [
+    "Adventure",
+    "Free To Play",
+    "Indie",
+    "RPG"
+  ],
+  "1221660": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Sports"
+  ],
+  "1222260": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1225120": [
+    "Adventure",
+    "Indie"
+  ],
+  "1225590": [
+    "Adventure"
+  ],
+  "1227010": [
+    "Action",
+    "Casual"
+  ],
+  "1227390": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1233270": [
+    "Adventure"
+  ],
+  "1258040": [
+    "Action",
+    "Adventure",
+    "Free To Play",
+    "Indie"
+  ],
+  "1307710": [
+    "Action",
+    "Racing",
+    "Simulation",
+    "Sports"
+  ],
+  "1309950": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "1310480": [
+    "Casual",
+    "Indie"
+  ],
+  "1311510": [
+    "Adventure",
+    "Indie"
+  ],
+  "1311800": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "1312250": [
+    "Action"
+  ],
+  "1312760": [
+    "Casual"
+  ],
+  "1313230": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "1313700": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1314230": [
+    "Free To Play",
+    "Massively Multiplayer",
+    "Strategy"
+  ],
+  "1314690": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Massively Multiplayer",
+    "RPG",
+    "Simulation",
+    "Strategy",
+    "Early Access"
+  ],
+  "1315160": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1315630": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1316000": [
+    "Action"
+  ],
+  "1316390": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1316870": [
+    "Strategy"
+  ],
+  "1318000": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1318450": [
+    "Action",
+    "RPG",
+    "Simulation",
+    "Early Access"
+  ],
+  "1318840": [
+    "RPG",
+    "Strategy"
+  ],
+  "1319400": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1320000": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1320500": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1321080": [
+    "Action"
+  ],
+  "1321680": [
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "1322300": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1323140": [
+    "Action",
+    "Adventure",
+    "RPG"
+  ],
+  "1323770": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1324150": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1324710": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1325220": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1325890": [
+    "Adventure",
+    "Indie"
+  ],
+  "1326760": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1327440": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1328400": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Early Access"
+  ],
+  "1328930": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1329360": [
+    "Action",
+    "Indie"
+  ],
+  "1329540": [
+    "Action"
+  ],
+  "1330140": [
+    "Indie"
+  ],
+  "1330790": [
+    "Action",
+    "Simulation",
+    "Sports"
+  ],
+  "1331080": [
+    "Casual"
+  ],
+  "1331420": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "1331660": [
+    "Action",
+    "Indie"
+  ],
+  "1332200": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1332460": [
+    "Free To Play",
+    "Massively Multiplayer",
+    "Sports",
+    "Strategy"
+  ],
+  "1332790": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1333090": [
+    "Action",
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Racing"
+  ],
+  "1333360": [
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "1333650": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Massively Multiplayer",
+    "RPG",
+    "Early Access"
+  ],
+  "1333980": [
+    "Casual",
+    "RPG",
+    "Simulation",
+    "Sports"
+  ],
+  "1334240": [
+    "Casual",
+    "Indie",
+    "Racing",
+    "Simulation"
+  ],
+  "1334590": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation"
+  ],
+  "1335020": [
+    "Action",
+    "Indie",
+    "Racing",
+    "Simulation"
+  ],
+  "1335500": [
+    "Indie",
+    "Simulation"
+  ],
+  "1335880": [
+    "Casual",
+    "Indie"
+  ],
+  "1336170": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1336570": [
+    "Indie"
+  ],
+  "1336960": [
+    "Casual"
+  ],
+  "1337280": [
+    "Casual",
+    "Indie"
+  ],
+  "1337810": [
+    "Free To Play",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "1338160": [
+    "Action",
+    "Indie"
+  ],
+  "1338570": [
+    "Indie",
+    "Early Access"
+  ],
+  "1338950": [
+    "Action"
+  ],
+  "1339370": [
+    "Indie"
+  ],
+  "1339670": [
+    "Action",
+    "Indie"
+  ],
+  "1340120": [
+    "Casual",
+    "Simulation"
+  ],
+  "1340420": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1340740": [
+    "Casual",
+    "Indie"
+  ],
+  "1341080": [
+    "Casual"
+  ],
+  "1341290": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1341620": [
+    "Adventure",
+    "Indie"
+  ],
+  "1341960": [
+    "Action",
+    "Adventure",
+    "Casual"
+  ],
+  "1342220": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1342560": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1342900": [
+    "Casual",
+    "Indie",
+    "Sports"
+  ],
+  "1343550": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Early Access"
+  ],
+  "1343970": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Racing"
+  ],
+  "1344530": [
+    "Casual",
+    "Simulation"
+  ],
+  "1344880": [
+    "Adventure",
+    "Indie"
+  ],
+  "1345180": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Early Access"
+  ],
+  "1345400": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1345850": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1346220": [
+    "Casual",
+    "RPG",
+    "Simulation",
+    "Early Access"
+  ],
+  "1346420": [
+    "Indie"
+  ],
+  "1346840": [
+    "Adventure"
+  ],
+  "1347170": [
+    "Casual",
+    "Indie"
+  ],
+  "1347580": [
+    "Adventure"
+  ],
+  "1348020": [
+    "Action",
+    "Free To Play",
+    "Indie",
+    "Early Access"
+  ],
+  "1348400": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1348930": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Early Access"
+  ],
+  "1349230": [
+    "Indie"
+  ],
+  "1349720": [
+    "Simulation",
+    "Sports"
+  ],
+  "1349960": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1350340": [
+    "Adventure",
+    "Simulation"
+  ],
+  "1350630": [
+    "RPG"
+  ],
+  "1351120": [
+    "Action",
+    "Adventure"
+  ],
+  "1351380": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Early Access"
+  ],
+  "1352140": [
+    "RPG",
+    "Simulation",
+    "Early Access"
+  ],
+  "1352530": [
+    "RPG"
+  ],
+  "1352840": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Free To Play"
+  ],
+  "1353230": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1353680": [
+    "Simulation",
+    "Strategy"
+  ],
+  "1354240": [
+    "Indie",
+    "RPG"
+  ],
+  "1354750": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "1355060": [
+    "Casual",
+    "Simulation",
+    "Strategy"
+  ],
+  "1355400": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1355630": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1355980": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1356360": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1356810": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1357210": [
+    "Simulation",
+    "Strategy"
+  ],
+  "1357580": [
+    "Action",
+    "Adventure",
+    "Simulation"
+  ],
+  "1357960": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1358260": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Strategy"
+  ],
+  "1358640": [
+    "Adventure",
+    "Casual"
+  ],
+  "1358900": [
+    "Action",
+    "Free To Play",
+    "Indie",
+    "Massively Multiplayer"
+  ],
+  "1359270": [
+    "Action",
+    "Adventure",
+    "Simulation",
+    "Strategy"
+  ],
+  "1359730": [
+    "Indie",
+    "Strategy"
+  ],
+  "1360040": [
+    "Indie",
+    "Sports"
+  ],
+  "1360380": [
+    "Indie"
+  ],
+  "1360660": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1361210": [
+    "Action",
+    "Adventure",
+    "RPG"
+  ],
+  "1361470": [
+    "Simulation"
+  ],
+  "1361720": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1362010": [
+    "Action",
+    "Simulation"
+  ],
+  "1362430": [
+    "Indie",
+    "Strategy"
+  ],
+  "1362720": [
+    "Casual",
+    "Indie"
+  ],
+  "1363040": [
+    "Action",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1363380": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1363790": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1364170": [
+    "Strategy"
+  ],
+  "1364500": [
+    "Action",
+    "Indie",
+    "Racing"
+  ],
+  "1364940": [
+    "Action",
+    "Adventure",
+    "Simulation"
+  ],
+  "1365550": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1365950": [
+    "Simulation"
+  ],
+  "1366260": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1366590": [
+    "Adventure",
+    "Casual"
+  ],
+  "1366940": [
+    "Action"
+  ],
+  "1367240": [
+    "Action",
+    "Casual",
+    "Free To Play",
+    "Indie"
+  ],
+  "1367530": [
+    "Action",
+    "Indie",
+    "Racing",
+    "Sports",
+    "Free To Play"
+  ],
+  "1367950": [
+    "Strategy"
+  ],
+  "1368240": [
+    "Casual",
+    "Indie",
+    "Strategy",
+    "Early Access"
+  ],
+  "1368690": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1369090": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1369570": [
+    "Casual",
+    "RPG",
+    "Simulation"
+  ],
+  "1369830": [
+    "Action",
+    "Indie",
+    "Strategy"
+  ],
+  "1370220": [
+    "Strategy"
+  ],
+  "1370600": [
+    "Indie",
+    "Sports",
+    "Free To Play"
+  ],
+  "1370940": [
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1371220": [
+    "Simulation",
+    "Strategy"
+  ],
+  "1371550": [
+    "Action",
+    "Simulation",
+    "Strategy"
+  ],
+  "1371740": [
+    "Indie",
+    "RPG"
+  ],
+  "1372000": [
+    "RPG"
+  ],
+  "1372370": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1372650": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1373080": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1373390": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1373600": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1373880": [
+    "Adventure",
+    "Indie",
+    "Strategy"
+  ],
+  "1374220": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1374470": [
+    "Casual",
+    "Indie"
+  ],
+  "1374840": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Strategy"
+  ],
+  "1375070": [
+    "Free To Play",
+    "Indie",
+    "Sports"
+  ],
+  "1375450": [
+    "Casual"
+  ],
+  "1375780": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1375970": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Early Access"
+  ],
+  "1376300": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1376640": [
+    "Casual",
+    "Indie"
+  ],
+  "1377010": [
+    "Indie",
+    "RPG",
+    "Simulation",
+    "Early Access"
+  ],
+  "1377350": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1377700": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1378080": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1378380": [
+    "Simulation"
+  ],
+  "1378820": [
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1379160": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1379600": [
+    "Action",
+    "Simulation",
+    "Strategy"
+  ],
+  "1380010": [
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1380320": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1380560": [
+    "Indie"
+  ],
+  "1380890": [
+    "Action",
+    "Casual",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1381350": [
+    "Casual",
+    "Free To Play"
+  ],
+  "1381650": [
+    "Simulation"
+  ],
+  "1382290": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Early Access"
+  ],
+  "1382770": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "RPG",
+    "Free To Play"
+  ],
+  "1383060": [
+    "Action"
+  ],
+  "1383370": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "1402110": [
+    "Action",
+    "Casual",
+    "Indie",
+    "RPG"
+  ],
+  "1435420": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1509820": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "1576190": [
+    "Action",
+    "Adventure"
+  ],
+  "1576530": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1576790": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1577080": [
+    "Indie",
+    "Racing",
+    "Simulation",
+    "Sports"
+  ],
+  "1577420": [
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "1577700": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Free To Play",
+    "Indie",
+    "Massively Multiplayer",
+    "Racing",
+    "RPG",
+    "Simulation",
+    "Sports",
+    "Strategy"
+  ],
+  "1578080": [
+    "Action",
+    "Adventure",
+    "Casual"
+  ],
+  "1578380": [
+    "Action",
+    "Indie",
+    "Early Access"
+  ],
+  "1578710": [
+    "Indie",
+    "Strategy"
+  ],
+  "1578990": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1579280": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1579650": [
+    "Indie"
+  ],
+  "1580030": [
+    "Casual",
+    "Strategy"
+  ],
+  "1580420": [
+    "Casual",
+    "Indie"
+  ],
+  "1581040": [
+    "Action"
+  ],
+  "1581300": [
+    "Strategy"
+  ],
+  "1581640": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1581890": [
+    "Adventure",
+    "Casual",
+    "Indie",
+    "Free To Play"
+  ],
+  "1582310": [
+    "Indie"
+  ],
+  "1582760": [
+    "Action",
+    "Adventure",
+    "Indie"
+  ],
+  "1583070": [
+    "Casual",
+    "Indie"
+  ],
+  "1583330": [
+    "Adventure",
+    "Indie"
+  ],
+  "1583650": [
+    "Adventure",
+    "Casual",
+    "Simulation"
+  ],
+  "1583910": [
+    "Casual",
+    "Indie"
+  ],
+  "1584210": [
+    "Indie",
+    "Simulation"
+  ],
+  "1584500": [
+    "Action",
+    "Casual",
+    "Indie"
+  ],
+  "1584860": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1585180": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1585440": [
+    "Action",
+    "Adventure"
+  ],
+  "1585750": [
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1586230": [
+    "Action",
+    "Indie",
+    "RPG"
+  ],
+  "1586620": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1586920": [
+    "Adventure",
+    "Indie"
+  ],
+  "1587220": [
+    "Adventure",
+    "Casual"
+  ],
+  "1587530": [
+    "Casual"
+  ],
+  "1587820": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1588130": [
+    "Action",
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1588520": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "Massively Multiplayer",
+    "Simulation",
+    "Early Access"
+  ],
+  "1588760": [
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1589120": [
+    "Adventure",
+    "RPG",
+    "Simulation"
+  ],
+  "1589440": [
+    "Casual",
+    "Indie",
+    "Simulation",
+    "Strategy"
+  ],
+  "1589670": [
+    "Casual",
+    "Indie",
+    "Strategy"
+  ],
+  "1589940": [
+    "Indie"
+  ],
+  "1590260": [
+    "Action",
+    "Casual",
+    "Indie",
+    "Simulation"
+  ],
+  "1590670": [
+    "Casual",
+    "Indie"
+  ],
+  "1591020": [
+    "Action",
+    "Adventure",
+    "Indie",
+    "RPG"
+  ],
+  "1591340": [
+    "Action"
+  ],
+  "1591570": [
+    "Adventure",
+    "Indie",
+    "RPG",
+    "Free To Play"
+  ],
+  "1591900": [
+    "Simulation"
+  ],
+  "1592260": [
+    "Action",
+    "Adventure",
+    "Free To Play"
+  ],
+  "1592540": [
+    "Adventure",
+    "Casual",
+    "Indie"
+  ],
+  "1592840": [
+    "Casual"
+  ],
+  "1593160": [
+    "Action",
+    "Casual",
+    "Indie"
+  ]
+}
