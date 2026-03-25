@@ -1,0 +1,1 @@
+-- Prisma: payload String @default("{}") — колонка уже TEXT из предыдущей миграции

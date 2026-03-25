@@ -22,8 +22,17 @@ export type StoredStateV2 = {
   lastLoginDay: string | null;
   loginStreak: number;
   coins: number;
-  /** Календарный день UTC `YYYY-MM-DD` и число бесплатных паков за этот день */
-  daily: { date: string; freePacksUsed: number };
+  /**
+   * Локальный календарный день `YYYY-MM-DD`, дневные бесплатные стандартные паки
+   * и скрытый счётчик всех открытий за день (см. PACK_OPENS_DAILY_CAP в коде).
+   */
+  daily: {
+    date: string;
+    freePacksUsed: number;
+    packsOpenedToday: number;
+  };
+  /** +1 стандартный пак за каждый прошедший локальный час (банк). */
+  hourly: { lastHourIndex: number; bank: number };
   /** Счётчик паков без карты rare+; при достижении порога — питти */
   pity: { packsSinceRarePlus: number };
   dust: number;

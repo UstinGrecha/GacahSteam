@@ -18,6 +18,16 @@ const nextConfig: NextConfig = {
         hostname: "steamcdn-a.akamaihd.net",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "**.steamstatic.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "**.akamaihd.net",
+        pathname: "/**",
+      },
     ],
   },
 };

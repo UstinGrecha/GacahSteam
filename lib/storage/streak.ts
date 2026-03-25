@@ -19,11 +19,11 @@ export function applyLoginStreak(state: StoredState): StoredState {
   const today = localDay();
   if (state.lastLoginDay === today) {
     if (state.daily.date !== today) {
-      state.daily = { date: today, freePacksUsed: 0 };
+      state.daily = { date: today, freePacksUsed: 0, packsOpenedToday: 0 };
     }
     return state;
   }
-  state.daily = { date: today, freePacksUsed: 0 };
+  state.daily = { date: today, freePacksUsed: 0, packsOpenedToday: 0 };
   state.coins += DAILY_LOGIN_COINS;
   if (state.lastLoginDay === prevLocalDay(today)) {
     state.loginStreak = (state.loginStreak ?? 0) + 1;

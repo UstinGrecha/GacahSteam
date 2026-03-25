@@ -6,12 +6,45 @@ import {
   rarityScoreBounds,
 } from "@/lib/gacha/stats";
 import type { AppMetrics, SteamCard } from "@/lib/gacha/types";
+import { economySync, monotonicLocalHourIndex } from "@/lib/economy/sync";
 import { localDay } from "@/lib/storage/streak";
 import { rebuildSpareCopiesFromPulls } from "./spareCopies";
 import type { AchievementMap, StoredState, StoredStateV2 } from "./types";
 
-const KEY = "steamgacha:v2";
+const GUEST_KEY = "steamgacha:v2";
 const KEY_LEGACY = "steamgacha:v1";
+
+/** Sub из OAuth / email-сессии; null = гостевой слот (ключ steamgacha:v2). */
+let persistedUserId: string | null = null;
+
+export function setPersistUserScope(userId: string | null): void {
+  persistedUserId = userId && userId.length > 0 ? userId : null;
+}
+
+function storageKey(): string {
+  return persistedUserId
+    ? `steamgacha:v2:u:${persistedUserId}`
+    : GUEST_KEY;
+}
+
+/**
+ * Если у аккаунта ещё нет сохранения, копирует гостевой прогресс из steamgacha:v2.
+ */
+export function migrateGuestSaveToUserIfNeeded(userId: string): void {
+  if (typeof window === "undefined") return;
+  const dest = `steamgacha:v2:u:${userId}`;
+  if (localStorage.getItem(dest)) return;
+  const guest = localStorage.getItem(GUEST_KEY);
+  if (!guest) return;
+  try {
+    const o = JSON.parse(guest) as { pulls?: unknown[] };
+    if (Array.isArray(o.pulls) && o.pulls.length > 0) {
+      localStorage.setItem(dest, guest);
+    }
+  } catch {
+    /* ignore */
+  }
+}
 
 function cardToMetrics(c: SteamCard): AppMetrics {
   const rc = c.reviewCount < 0 ? 0 : Math.max(0, Math.floor(c.reviewCount));
@@ -101,7 +134,8 @@ export function defaultState(): StoredState {
     lastLoginDay: null,
     loginStreak: 0,
     coins: 0,
-    daily: { date: localDay(), freePacksUsed: 0 },
+    daily: { date: localDay(), freePacksUsed: 0, packsOpenedToday: 0 },
+    hourly: { lastHourIndex: monotonicLocalHourIndex(), bank: 0 },
     pity: { packsSinceRarePlus: 0 },
     dust: 0,
     spareCopies: {},
@@ -110,7 +144,17 @@ export function defaultState(): StoredState {
   };
 }
 
-function normalizeV2(raw: Partial<StoredStateV2>): StoredState {
+/**
+ * Снимок из API/БД без economySync (день/часы считаются на сервере по UTC или локально у гостя).
+ */
+export function hydrateStoredStateFromApi(raw: unknown): StoredState {
+  if (!raw || typeof raw !== "object") return defaultState();
+  const o = raw as Partial<StoredStateV2>;
+  if (o.version === 2 && Array.isArray(o.pulls)) return parseStoredStateRecord(o);
+  return defaultState();
+}
+
+function parseStoredStateRecord(raw: Partial<StoredStateV2>): StoredState {
   const pulls = Array.isArray(raw.pulls) ? raw.pulls : [];
   const achievements =
     raw.achievements && typeof raw.achievements === "object"
@@ -130,8 +174,22 @@ function normalizeV2(raw: Partial<StoredStateV2>): StoredState {
       typeof raw.daily === "object" &&
       typeof raw.daily.date === "string" &&
       typeof raw.daily.freePacksUsed === "number"
-        ? { ...raw.daily }
-        : { date: localDay(), freePacksUsed: 0 },
+        ? {
+            date: raw.daily.date,
+            freePacksUsed: raw.daily.freePacksUsed,
+            packsOpenedToday:
+              typeof raw.daily.packsOpenedToday === "number"
+                ? raw.daily.packsOpenedToday
+                : 0,
+          }
+        : { date: localDay(), freePacksUsed: 0, packsOpenedToday: 0 },
+    hourly:
+      raw.hourly &&
+      typeof raw.hourly === "object" &&
+      typeof raw.hourly.lastHourIndex === "number" &&
+      typeof raw.hourly.bank === "number"
+        ? { ...raw.hourly }
+        : { lastHourIndex: monotonicLocalHourIndex(), bank: 0 },
     pity:
       raw.pity &&
       typeof raw.pity.packsSinceRarePlus === "number"
@@ -151,6 +209,12 @@ function normalizeV2(raw: Partial<StoredStateV2>): StoredState {
     rebuildSpareCopiesFromPulls(state);
   }
   normalizePullsCards(state);
+  return state;
+}
+
+function normalizeV2(raw: Partial<StoredStateV2>): StoredState {
+  const state = parseStoredStateRecord(raw);
+  economySync(state);
   return state;
 }
 
@@ -182,7 +246,8 @@ function migrateFromV1(parsed: {
     loginStreak:
       typeof parsed.loginStreak === "number" ? parsed.loginStreak : 0,
     coins: 0,
-    daily: { date: localDay(), freePacksUsed: 0 },
+    daily: { date: localDay(), freePacksUsed: 0, packsOpenedToday: 0 },
+    hourly: { lastHourIndex: monotonicLocalHourIndex(), bank: 0 },
     pity: { packsSinceRarePlus: 0 },
     dust: 0,
     spareCopies: {},
@@ -191,13 +256,15 @@ function migrateFromV1(parsed: {
   };
   rebuildSpareCopiesFromPulls(state);
   normalizePullsCards(state);
+  economySync(state);
   return state;
 }
 
 export function loadState(): StoredState {
   if (typeof window === "undefined") return defaultState();
+  const key = storageKey();
   try {
-    const rawV2 = localStorage.getItem(KEY);
+    const rawV2 = localStorage.getItem(key);
     if (rawV2) {
       const parsed = JSON.parse(rawV2) as Partial<StoredStateV2>;
       if (parsed.version === 2 && Array.isArray(parsed.pulls)) {
@@ -206,7 +273,7 @@ export function loadState(): StoredState {
     }
 
     const rawLegacy = localStorage.getItem(KEY_LEGACY);
-    if (rawLegacy) {
+    if (rawLegacy && key === GUEST_KEY) {
       const parsed = JSON.parse(rawLegacy) as {
         version?: number;
         pulls?: StoredState["pulls"];
@@ -217,7 +284,7 @@ export function loadState(): StoredState {
       if (parsed.version === 1 && Array.isArray(parsed.pulls)) {
         const migrated = migrateFromV1(parsed);
         try {
-          localStorage.setItem(KEY, JSON.stringify(migrated));
+          localStorage.setItem(GUEST_KEY, JSON.stringify(migrated));
           localStorage.removeItem(KEY_LEGACY);
         } catch {
           /* ignore */
@@ -234,7 +301,7 @@ export function loadState(): StoredState {
 export function saveState(state: StoredState): void {
   if (typeof window === "undefined") return;
   try {
-    localStorage.setItem(KEY, JSON.stringify(state));
+    localStorage.setItem(storageKey(), JSON.stringify(state));
   } catch {
     /* quota / private mode */
   }
@@ -244,8 +311,8 @@ export function saveState(state: StoredState): void {
 export function clearPersistedGameState(): void {
   if (typeof window === "undefined") return;
   try {
-    localStorage.removeItem(KEY);
-    localStorage.removeItem(KEY_LEGACY);
+    localStorage.removeItem(storageKey());
+    if (!persistedUserId) localStorage.removeItem(KEY_LEGACY);
   } catch {
     /* ignore */
   }

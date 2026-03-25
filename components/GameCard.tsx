@@ -5,7 +5,6 @@ import {
   combatWeaknessMultiplier,
   computeCardHp,
 } from "@/lib/gacha/stats";
-import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { useI18n } from "./I18nProvider";
@@ -230,17 +229,17 @@ export function GameCard({ card, entranceIndex, variant = "default" }: GameCardP
           {/* Окно иллюстрации */}
           <div className="mx-2 mb-2 mt-0.5 rounded-sm border-[3px] border-[#a16207] bg-[#fde68a] p-1 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.5)]">
             <div className="relative aspect-square w-full overflow-hidden rounded-[1px] bg-zinc-950">
-              <Image
+              {/* Steam header_image может быть с любого CDN-хоста — не полагаемся на remotePatterns next/image */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={card.headerImage}
                 alt={card.name}
-                fill
                 draggable={false}
                 className={
                   isDeck
-                    ? "pointer-events-none object-contain object-center"
-                    : "object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                    ? "pointer-events-none h-full w-full object-contain object-center"
+                    : "h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
                 }
-                sizes="(max-width:768px) 100vw, 20rem"
               />
             </div>
           </div>

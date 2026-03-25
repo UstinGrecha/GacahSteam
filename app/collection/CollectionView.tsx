@@ -1,11 +1,13 @@
 "use client";
 
 import { GameCard } from "@/components/GameCard";
+import { rarityTcgCode } from "@/components/rarityStyles";
 import { useI18n } from "@/components/I18nProvider";
 import { useGameStorage } from "@/components/StorageProvider";
+import { applySellCardAtSlot } from "@/lib/economy/applySellCard";
+import { cardSellCoins } from "@/lib/economy/cardSellPrice";
 import { DUST_PER_TRIPLE_SALVAGE } from "@/lib/economy/constants";
 import type { Rarity } from "@/lib/gacha/types";
-import { rarityTcgCode } from "@/components/rarityStyles";
 import { useCallback, useMemo, useState } from "react";
 
 const ALL: Rarity | "all" = "all";
@@ -19,12 +21,16 @@ const rarityOrder: Rarity[] = [
   "common",
 ];
 
-export function CollectionView() {
-  const { state, commit } = useGameStorage();
+type CollectionViewProps = { embedded?: boolean };
+
+export function CollectionView({ embedded = false }: CollectionViewProps) {
+  const { state, commit, refresh, serverAuthoritative } = useGameStorage();
   const { t, messages, bcp47 } = useI18n();
   const rl = messages.rarity;
   const [query, setQuery] = useState("");
   const [rarity, setRarity] = useState<Rarity | "all">(ALL);
+  const [sellError, setSellError] = useState<string | null>(null);
+  const [sellingKey, setSellingKey] = useState<string | null>(null);
 
   const flat = useMemo(
     () =>
@@ -34,9 +40,10 @@ export function CollectionView() {
             new Date(b.openedAt).getTime() - new Date(a.openedAt).getTime(),
         )
         .flatMap((pull) =>
-          pull.cards.map((c) => ({
+          pull.cards.map((c, slotIndex) => ({
             ...c,
             pullId: pull.id,
+            slotIndex,
             openedAt: pull.openedAt,
           })),
         ),
@@ -69,7 +76,17 @@ export function CollectionView() {
   }, [flat]);
 
   const salvage = useCallback(
-    (appid: number) => {
+    async (appid: number) => {
+      if (serverAuthoritative) {
+        const res = await fetch("/api/game/salvage", {
+          method: "POST",
+          credentials: "same-origin",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ appid }),
+        });
+        if (res.ok) await refresh();
+        return;
+      }
       commit((draft) => {
         const k = String(appid);
         if ((draft.spareCopies[k] ?? 0) < 3) return;
@@ -78,7 +95,40 @@ export function CollectionView() {
         draft.salvageCount += 1;
       });
     },
-    [commit],
+    [commit, refresh, serverAuthoritative],
+  );
+
+  const sellCard = useCallback(
+    async (pullId: string, slotIndex: number) => {
+      const key = `${pullId}:${slotIndex}`;
+      setSellingKey(key);
+      setSellError(null);
+      try {
+        if (serverAuthoritative) {
+          const res = await fetch("/api/game/sell-card", {
+            method: "POST",
+            credentials: "same-origin",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ pullId, slotIndex }),
+          });
+          if (res.ok) {
+            await refresh();
+          } else {
+            setSellError(t("collection.sellError"));
+          }
+          return;
+        }
+        let failed = false;
+        commit((draft) => {
+          const r = applySellCardAtSlot(draft, pullId, slotIndex);
+          if (!r.ok) failed = true;
+        });
+        if (failed) setSellError(t("collection.sellError"));
+      } finally {
+        setSellingKey(null);
+      }
+    },
+    [commit, refresh, serverAuthoritative, t],
   );
 
   const uniqueCount = useMemo(
@@ -86,12 +136,24 @@ export function CollectionView() {
     [flat],
   );
 
+  const Root = embedded ? "section" : "main";
+  const Title = embedded ? "h2" : "h1";
+
   return (
-    <main className="flex flex-1 flex-col gap-6">
+    <Root
+      id={embedded ? "profile-collection" : undefined}
+      className={`flex flex-1 flex-col gap-6${embedded ? " scroll-mt-28 border-t border-zinc-800/80 pt-8" : ""}`}
+    >
       <div>
-        <h1 className="text-2xl font-bold text-zinc-50">
+        <Title
+          className={
+            embedded
+              ? "text-xl font-bold text-zinc-50"
+              : "text-2xl font-bold text-zinc-50"
+          }
+        >
           {t("collection.title")}
-        </h1>
+        </Title>
         <p className="mt-1 text-sm text-zinc-400">
           {t("collection.summary", {
             cards: flat.length,
@@ -124,6 +186,12 @@ export function CollectionView() {
           ))}
         </select>
       </div>
+
+      <p className="text-xs text-zinc-500">{t("collection.sellHint")}</p>
+
+      {sellError ? (
+        <p className="text-sm text-amber-200/90">{sellError}</p>
+      ) : null}
 
       {salvageCandidates.length > 0 ? (
         <section className="rounded-xl border border-violet-800/50 bg-violet-950/20 p-4">
@@ -166,14 +234,27 @@ export function CollectionView() {
         </p>
       ) : (
         <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filtered.map((c, i) => (
-            <li key={`${c.pullId}-${c.appid}-${i}`}>
-              <GameCard card={c} />
-              <p className="mt-1 text-center text-[10px] text-zinc-600">
-                {new Date(c.openedAt).toLocaleString(bcp47)}
-              </p>
-            </li>
-          ))}
+          {filtered.map((c) => {
+            const price = cardSellCoins(c);
+            const rowKey = `${c.pullId}:${c.slotIndex}`;
+            const busy = sellingKey === rowKey;
+            return (
+              <li key={rowKey} className="flex flex-col">
+                <GameCard card={c} />
+                <p className="mt-1 text-center text-[10px] text-zinc-600">
+                  {new Date(c.openedAt).toLocaleString(bcp47)}
+                </p>
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={() => void sellCard(c.pullId, c.slotIndex)}
+                  className="mt-2 rounded-lg border border-amber-700/50 bg-amber-950/35 px-2 py-1.5 text-center text-xs font-semibold text-amber-200/95 transition hover:bg-amber-900/40 disabled:opacity-45"
+                >
+                  {busy ? "…" : t("collection.sellBtn", { n: price })}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       )}
 
@@ -204,6 +285,6 @@ export function CollectionView() {
           </ol>
         </section>
       ) : null}
-    </main>
+    </Root>
   );
 }

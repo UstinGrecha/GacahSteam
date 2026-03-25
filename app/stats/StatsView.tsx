@@ -16,7 +16,9 @@ const ORDER: Rarity[] = [
   "common",
 ];
 
-export function StatsView() {
+type StatsViewProps = { embedded?: boolean };
+
+export function StatsView({ embedded = false }: StatsViewProps) {
   const { state } = useGameStorage();
   const { t, messages } = useI18n();
   const rl = messages.rarity;
@@ -25,10 +27,24 @@ export function StatsView() {
     [state.pulls],
   );
 
+  const Root = embedded ? "section" : "main";
+  const Title = embedded ? "h2" : "h1";
+
   return (
-    <main className="flex flex-1 flex-col gap-6">
+    <Root
+      id={embedded ? "profile-stats" : undefined}
+      className={`flex flex-1 flex-col gap-6${embedded ? " scroll-mt-28 border-t border-zinc-800/80 pt-8" : ""}`}
+    >
       <div>
-        <h1 className="text-2xl font-bold text-zinc-50">{t("stats.title")}</h1>
+        <Title
+          className={
+            embedded
+              ? "text-xl font-bold text-zinc-50"
+              : "text-2xl font-bold text-zinc-50"
+          }
+        >
+          {t("stats.title")}
+        </Title>
         <p className="mt-1 text-sm text-zinc-400">{t("stats.subtitle")}</p>
       </div>
 
@@ -102,6 +118,6 @@ export function StatsView() {
           {t("stats.favoriteGenreHint")}
         </p>
       </section>
-    </main>
+    </Root>
   );
 }

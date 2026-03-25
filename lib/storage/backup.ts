@@ -1,3 +1,4 @@
+import { economySync, monotonicLocalHourIndex } from "@/lib/economy/sync";
 import { normalizePullsCards } from "./persist";
 import { localDay } from "./streak";
 import type { StoredState } from "./types";
@@ -26,8 +27,21 @@ export function parseStoredStateJson(text: string): StoredState | null {
         typeof r.daily.date === "string" &&
         r.daily.date &&
         typeof r.daily.freePacksUsed === "number"
-          ? { ...r.daily }
-          : { date: localDay(), freePacksUsed: 0 },
+          ? {
+              date: r.daily.date,
+              freePacksUsed: r.daily.freePacksUsed,
+              packsOpenedToday:
+                typeof r.daily.packsOpenedToday === "number"
+                  ? r.daily.packsOpenedToday
+                  : 0,
+            }
+          : { date: localDay(), freePacksUsed: 0, packsOpenedToday: 0 },
+      hourly:
+        r.hourly &&
+        typeof r.hourly.lastHourIndex === "number" &&
+        typeof r.hourly.bank === "number"
+          ? { ...r.hourly }
+          : { lastHourIndex: monotonicLocalHourIndex(), bank: 0 },
       pity:
         r.pity && typeof r.pity.packsSinceRarePlus === "number"
           ? { ...r.pity }
@@ -43,6 +57,7 @@ export function parseStoredStateJson(text: string): StoredState | null {
         typeof r.salvageCount === "number" ? r.salvageCount : 0,
     };
     normalizePullsCards(state);
+    economySync(state);
     return state;
   } catch {
     return null;

@@ -5,6 +5,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
@@ -171,6 +175,152 @@ body {
   animation: sg-results-reveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* —— Rare+ pull: мягкое свечение за колодой —— */
+@keyframes sg-deck-rare-ambience-shift {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    opacity: 0.92;
+    transform: scale(1.05) rotate(1.2deg);
+  }
+  66% {
+    opacity: 1;
+    transform: scale(1.025) rotate(-0.8deg);
+  }
+}
+
+.sg-deck-rare-ambience {
+  contain: layout style;
+}
+
+.sg-deck-rare-ambience-inner {
+  position: absolute;
+  inset: -20%;
+  transform-origin: 50% 45%;
+  filter: blur(48px);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      ellipse 72% 58% at 50% 38%,
+      rgba(251, 191, 36, 0.38),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 50% at 78% 62%,
+      rgba(167, 139, 250, 0.28),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 48% 44% at 22% 58%,
+      rgba(34, 211, 238, 0.2),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 90% 70% at 50% 50%,
+      rgba(234, 179, 8, 0.12),
+      transparent 65%
+    );
+  animation: sg-deck-rare-ambience-shift 5.5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.sg-deck-rare-ambience--intense .sg-deck-rare-ambience-inner {
+  filter: blur(56px);
+  background:
+    radial-gradient(
+      ellipse 70% 56% at 48% 36%,
+      rgba(253, 224, 71, 0.48),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 52% 48% at 80% 58%,
+      rgba(192, 132, 252, 0.38),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse 46% 42% at 18% 55%,
+      rgba(56, 189, 248, 0.28),
+      transparent 46%
+    ),
+    radial-gradient(
+      ellipse 88% 68% at 52% 48%,
+      rgba(245, 158, 11, 0.2),
+      transparent 62%
+    );
+  animation-duration: 4.2s;
+}
+
+/* —— Смена серии: заднюю колоду «вытаскивают» и кладут перед передней —— */
+@keyframes sg-pack-deck-pull-front {
+  0% {
+    transform: translateX(calc(-50% + 1rem)) translateY(1.75rem) scale(0.97);
+    opacity: 0.88;
+    z-index: 10;
+  }
+  24% {
+    transform: translateX(calc(-50% + 0.5rem)) translateY(-2.65rem) scale(1.07)
+      rotate(-4deg);
+    opacity: 1;
+    z-index: 50;
+  }
+  50% {
+    transform: translateX(calc(-50% - 1.05rem)) translateY(-3.35rem) scale(1.05)
+      rotate(1.5deg);
+    opacity: 1;
+    z-index: 50;
+  }
+  74% {
+    transform: translateX(calc(-50% - 1rem)) translateY(0.4rem) scale(1.02)
+      rotate(0deg);
+    z-index: 45;
+  }
+  100% {
+    transform: translateX(calc(-50% - 1rem)) translateY(-2px) scale(1);
+    opacity: 1;
+    z-index: 30;
+  }
+}
+
+@keyframes sg-pack-deck-send-back {
+  0% {
+    transform: translateX(calc(-50% - 1rem)) translateY(-2px) scale(1);
+    opacity: 1;
+    z-index: 30;
+  }
+  30% {
+    transform: translateX(calc(-50% - 0.55rem)) translateY(0.85rem) scale(0.99)
+      rotate(2.5deg);
+    opacity: 0.96;
+    z-index: 22;
+  }
+  55% {
+    transform: translateX(calc(-50% + 0.35rem)) translateY(1.15rem) scale(0.98)
+      rotate(-1deg);
+    opacity: 0.92;
+    z-index: 12;
+  }
+  100% {
+    transform: translateX(calc(-50% + 1rem)) translateY(1.75rem) scale(1);
+    opacity: 0.9;
+    z-index: 10;
+  }
+}
+
+.sg-pack-deck-swap-armed {
+  transition: none !important;
+}
+
+.sg-pack-deck-pull-front {
+  animation: sg-pack-deck-pull-front 0.78s cubic-bezier(0.38, 0, 0.18, 1) both;
+}
+
+.sg-pack-deck-send-back {
+  animation: sg-pack-deck-send-back 0.78s cubic-bezier(0.38, 0, 0.18, 1) both;
+}
+
 /* —— Legendary ambient pulse —— */
 @keyframes sg-legend-pulse {
   0%,
@@ -267,5 +417,16 @@ body {
   .sg-pokemon-holo-tier-sheen {
     animation: none !important;
     background-position: 50% 50%;
+  }
+
+  .sg-deck-rare-ambience-inner {
+    animation: none !important;
+    transform: none;
+    opacity: 0.85;
+  }
+
+  .sg-pack-deck-pull-front,
+  .sg-pack-deck-send-back {
+    animation: none !important;
   }
 }

@@ -62,10 +62,11 @@ export function PackDeck({ cards, packRef, onDismiss }: PackDeckProps) {
   }, [cards, packRef]);
 
   useEffect(() => {
-    const t = window.setTimeout(
-      () => setFlyDone(true),
-      STAGGER_MS * Math.max(0, n - 1) + FLY_MS + 40,
-    );
+    setFlyDone(false);
+    setDeckIndex(0);
+    setDragX(0);
+    const delay = STAGGER_MS * Math.max(0, n - 1) + FLY_MS + 200;
+    const t = window.setTimeout(() => setFlyDone(true), delay);
     return () => clearTimeout(t);
   }, [cards, n]);
 
@@ -185,6 +186,15 @@ export function PackDeck({ cards, packRef, onDismiss }: PackDeckProps) {
             <div
               className={flying ? "sg-deck-card-flying" : ""}
               style={innerStyle}
+              onAnimationEnd={
+                flying && layer === stack.length - 1
+                  ? (e) => {
+                      if (e.animationName.includes("sg-deck-fly-in")) {
+                        setFlyDone(true);
+                      }
+                    }
+                  : undefined
+              }
             >
               <div
                 className={
@@ -266,7 +276,7 @@ export function PackDeck({ cards, packRef, onDismiss }: PackDeckProps) {
   return (
     <>
       <div
-        className="pointer-events-none absolute left-1/2 z-30 w-[min(92vw,280px)] max-w-[280px] -translate-x-1/2 -translate-y-1/2"
+        className="pointer-events-none absolute left-1/2 z-50 w-[min(92vw,280px)] max-w-[280px] -translate-x-1/2 -translate-y-1/2"
         style={{ top: PACK_CENTER_Y }}
         aria-hidden={false}
       >

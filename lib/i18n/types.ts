@@ -16,12 +16,44 @@ export type Messages = {
   nav: {
     brand: string;
     pack: string;
+    profile: string;
     collection: string;
     stats: string;
     achievements: string;
     settings: string;
     coins: string;
     coinsTitle: string;
+    login: string;
+    authorization: string;
+    logout: string;
+  };
+  auth: {
+    title: string;
+    subtitle: string;
+    registerTitle: string;
+    registerSubtitle: string;
+    signInGoogle: string;
+    registerGoogle: string;
+    emailLabel: string;
+    passwordLabel: string;
+    passwordPlaceholder: string;
+    nicknameLabel: string;
+    nicknamePlaceholder: string;
+    confirmPasswordLabel: string;
+    emailPlaceholder: string;
+    signInSubmit: string;
+    registerSubmit: string;
+    haveAccount: string;
+    needAccount: string;
+    signOut: string;
+    signedInAs: string;
+    errorNoProviders: string;
+    errorGeneric: string;
+    errorEmailTaken: string;
+    errorNicknameLength: string;
+    errorPasswordLength: string;
+    errorPasswordMatch: string;
+    errorEmailInvalid: string;
   };
   legal: {
     line1: string;
@@ -29,6 +61,28 @@ export type Messages = {
     line3: string;
   };
   home: { title: string };
+  profile: {
+    title: string;
+    subtitle: string;
+    sectionNav: string;
+    leaderboard: {
+      title: string;
+      subtitle: string;
+      loading: string;
+      empty: string;
+      loadError: string;
+      noDatabase: string;
+      rank: string;
+      player: string;
+      card: string;
+      atk: string;
+      def: string;
+      hp: string;
+      total: string;
+      viewCard: string;
+      closePreview: string;
+    };
+  };
   rarity: {
     common: string;
     uncommon: string;
@@ -56,6 +110,10 @@ export type Messages = {
   };
   pack: {
     kindLabel: string;
+    seriesSection: string;
+    /** Подпись на паке: «Серия {{n}}» */
+    seriesLabel: string;
+    seriesPickHint: string;
     standard: string;
     budget: string;
     premium: string;
@@ -65,17 +123,18 @@ export type Messages = {
     openStandardFree: string;
     noFreeLeft: string;
     openForCoins: string;
+    /** Серия закрыта (временно), кнопка открытия */
+    series2Soon: string;
     rerolling: string;
     rerollSlot: string;
     errRefreshDay: string;
+    /** Скрытый дневной лимит открытий — без цифр в тексте */
+    errPackUnavailable: string;
     errStandardExhausted: string;
     errNeedCoins: string;
     errReroll: string;
     errReplace: string;
     errOpen: string;
-    /** Только dev: витрина всех редкостей */
-    debugAllRarities: string;
-    debugAllRaritiesSub: string;
   };
   deck: {
     prev: string;
@@ -110,6 +169,9 @@ export type Messages = {
     salvageHint: string;
     copies: string;
     salvageBtn: string;
+    sellBtn: string;
+    sellHint: string;
+    sellError: string;
     empty: string;
     packHistory: string;
     cardsWord: string;

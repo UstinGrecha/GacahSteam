@@ -2,7 +2,7 @@ import { NavBar } from "@/components/NavBar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AppProviders } from "@/app/providers";
 import { SITE_BRAND } from "@/lib/siteBrand";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,6 +22,13 @@ export const metadata: Metadata = {
     "Unofficial fan card packs from public PC game store listings. Not affiliated with Valve Corporation.",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#09090b",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,10 +39,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-zinc-950 font-sans text-zinc-100">
+      <body className="flex min-h-dvh flex-col overflow-x-clip bg-zinc-950 font-sans text-zinc-100 antialiased [touch-action:manipulation]">
         <AppProviders>
           <NavBar />
-          <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-8">
+          <div className="mx-auto flex w-full min-w-0 max-w-6xl flex-1 flex-col px-3 py-6 sm:px-4 sm:py-8">
             {children}
           </div>
           <SiteFooter />

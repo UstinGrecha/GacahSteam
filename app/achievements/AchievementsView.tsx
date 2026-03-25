@@ -4,16 +4,30 @@ import { useI18n } from "@/components/I18nProvider";
 import { useGameStorage } from "@/components/StorageProvider";
 import { ACHIEVEMENTS } from "@/lib/achievements/definitions";
 
-export function AchievementsView() {
+type AchievementsViewProps = { embedded?: boolean };
+
+export function AchievementsView({ embedded = false }: AchievementsViewProps) {
   const { state } = useGameStorage();
   const { t, messages, bcp47 } = useI18n();
 
+  const Root = embedded ? "section" : "main";
+  const Title = embedded ? "h2" : "h1";
+
   return (
-    <main className="flex flex-1 flex-col gap-6">
+    <Root
+      id={embedded ? "profile-achievements" : undefined}
+      className={`flex flex-1 flex-col gap-6${embedded ? " scroll-mt-28 border-t border-zinc-800/80 pt-8" : ""}`}
+    >
       <div>
-        <h1 className="text-2xl font-bold text-zinc-50">
+        <Title
+          className={
+            embedded
+              ? "text-xl font-bold text-zinc-50"
+              : "text-2xl font-bold text-zinc-50"
+          }
+        >
           {t("achievements.pageTitle")}
-        </h1>
+        </Title>
         <p className="mt-1 text-sm text-zinc-400">
           {t("achievements.subtitle")}
         </p>
@@ -72,6 +86,6 @@ export function AchievementsView() {
           );
         })}
       </ul>
-    </main>
+    </Root>
   );
 }
