@@ -18,10 +18,12 @@ const face = (
 
 export const ru: Messages = {
   meta: {
-    title: "SteamGacha",
-    description: "Гача-паки из игр Steam: коллекция и достижения.",
+    title: "GameGacha",
+    description:
+      "Неофициальный фан-проект: карточки по публичным данным витрины ПК-игр. Не связан с Valve.",
   },
   nav: {
+    brand: "GameGacha",
     pack: "Пак",
     collection: "Коллекция",
     stats: "Статистика",
@@ -30,10 +32,16 @@ export const ru: Messages = {
     coins: "мон.",
     coinsTitle: "Монеты",
   },
+  legal: {
+    line1:
+      "Независимый фан-проект только для личного развлечения. Не аффилирован с Valve Corporation, не одобрен, не спонсируется и не поддерживается ею.",
+    line2:
+      "Steam и логотип Steam — товарные знаки и/или зарегистрированные товарные знаки Valve Corporation в США и/или других странах.",
+    line3:
+      "Сведения о играх взяты из публично доступных страниц витрины; точность и доступность не гарантируются. Карточки не являются официальной продукцией, предметами Steam Wallet или товаром для перепродажи.",
+  },
   home: {
-    title: "Откройте пак из Steam",
-    subtitle:
-      "Пять карточек-игр с редкостью и статами из данных магазина Steam.",
+    title: "Откройте карточный пак",
   },
   rarity: {
     common: "Обычная",
@@ -45,7 +53,7 @@ export const ru: Messages = {
   },
   gameCard: {
     baseGame: "Базовая игра",
-    typeSteam: "Тип: Steam",
+    typeSteam: "Витрина: ПК-магазин",
     attack: "Атака",
     defense: "Защита",
     weakness: "Слабость",
@@ -54,19 +62,18 @@ export const ru: Messages = {
     resistValue: "−{{n}} шум",
     metacriticShort: "Metacritic {{n}}",
     positivePercent: "{{n}}% положительных",
-    noUserReviewsSteam: "Нет пользовательских отзывов в Steam",
+    noUserReviewsSteam: "Нет пользовательских отзывов в карточке витрины",
     reviewsTotal: "{{n}} отзывов",
-    store: "Steam",
+    store: "Страница витрины",
+    metricsFallback: "Витрина",
   },
   pack: {
     kindLabel: "Тип пака",
     standard: "Стандарт",
     budget: "Дешёвый",
     premium: "Премиум",
-    hintMain:
-      "Стандарт — только бесплатные попытки ({{freeLeft}}/{{freeMax}} сегодня). Дешёвый 20 · премиум 40 монет. Питти rare+ каждые {{pity}} паков без rare+.",
-    hintCoinsLabel: "Монеты:",
-    hintDustLabel: "Пыль:",
+    hintSummary:
+      "Сегодня бесплатных попыток: {{freeLeft}} из {{freeMax}}. Каждые {{pity}} паков подряд без rare+ — в следующем паке гарантированно редкая или выше.",
     loading: "Достаём карты…",
     tearing: "Рвём пак…",
     openStandardFree: "Открыть стандартный пак (бесплатно)",
@@ -103,13 +110,14 @@ export const ru: Messages = {
     tearLong: "отрывная линия",
     tearShort: "отрыв",
     gacha: "GACHA",
+    packMark: "Фан",
     standard: face(
       "Серия I",
       "Коллекционный",
       "набор",
       "отрывная линия",
       "карт",
-      "Случайные игры Steam · не для перепродажи",
+      "Случайные позиции витрины · не для перепродажи · неофициально",
     ),
     budget: face(
       "Эконом",
@@ -125,7 +133,7 @@ export const ru: Messages = {
       "коллекция",
       "отрывная линия",
       "карт",
-      "Повышенный шанс редких · Steam",
+      "Повышенный шанс редких · фан-пак",
     ),
   },
   collection: {
@@ -153,7 +161,7 @@ export const ru: Messages = {
     rarities: "Редкости",
     favoriteGenre: "Любимый жанр",
     favoriteGenreHint:
-      "По числу карточек с этим жанром в данных Steam. Если жанров нет — откройте новые паки после обновления.",
+      "По числу карточек с этим жанром в сохранённых данных витрины. Если жанров нет — откройте новые паки после обновления.",
   },
   achievements: {
     pageTitle: "Достижения",
@@ -194,7 +202,7 @@ export const ru: Messages = {
         description: "Заходите 3 дня подряд.",
       },
       streak_7: {
-        title: "Неделя Steam",
+        title: "Семь дней подряд",
         description: "Заходите 7 дней подряд.",
       },
       first_rare_plus_pity: {

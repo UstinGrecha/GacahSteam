@@ -1,5 +1,7 @@
 import { NavBar } from "@/components/NavBar";
+import { SiteFooter } from "@/components/SiteFooter";
 import { AppProviders } from "@/app/providers";
+import { SITE_BRAND } from "@/lib/siteBrand";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -15,8 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SteamGacha",
-  description: "Steam game gacha packs: collection and achievements.",
+  title: SITE_BRAND,
+  description:
+    "Unofficial fan card packs from public PC game store listings. Not affiliated with Valve Corporation.",
 };
 
 export default function RootLayout({
@@ -35,6 +38,7 @@ export default function RootLayout({
           <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-8">
             {children}
           </div>
+          <SiteFooter />
         </AppProviders>
       </body>
     </html>

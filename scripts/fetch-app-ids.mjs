@@ -16,7 +16,7 @@ const GAMES_JSON_URL =
 
 async function main() {
   const res = await fetch(GAMES_JSON_URL, {
-    headers: { "User-Agent": "SteamGachaFetcher/1.0" },
+    headers: { "User-Agent": "GameGachaFetcher/1.0" },
   });
   if (!res.ok) throw new Error(`games_appid.json fetch failed: ${res.status}`);
 

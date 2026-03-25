@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import type { AppMetrics } from "./types";
-import { computeStrictRarity } from "./rarityStrict";
 import {
   clamp,
   computeAtkDef,
@@ -83,12 +82,6 @@ describe("computeScore", () => {
   it("keeps ~51k+ review games in super-rare score band", () => {
     const s = computeScore({ ...base, reviewCount: 51_000 });
     expect(s).toBeGreaterThanOrEqual(74);
-    expect(
-      computeStrictRarity(
-        { ...base, reviewCount: 51_000 },
-        { comingSoon: false, unreleasedLowReviews: false },
-      ),
-    ).toBe("epic");
   });
 
   it("boosts score for older releases when review mass is similar", () => {

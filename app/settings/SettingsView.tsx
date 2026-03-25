@@ -9,6 +9,7 @@ import {
 import { clearPersistedGameState, saveState } from "@/lib/storage/persist";
 import type { AppLocale } from "@/lib/i18n/types";
 import { LOCALE_NATIVE } from "@/lib/i18n/types";
+import { SITE_BRAND } from "@/lib/siteBrand";
 import { useCallback, useRef, useState } from "react";
 
 const LOCALES: AppLocale[] = ["en", "ru", "ja", "zh"];
@@ -25,7 +26,7 @@ export function SettingsView() {
     });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `steamgacha-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `${SITE_BRAND.toLowerCase()}-backup-${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(a.href);
     setMsg(t("settings.msgSaved"));

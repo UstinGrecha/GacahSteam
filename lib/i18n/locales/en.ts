@@ -18,10 +18,12 @@ const face = (
 
 export const en: Messages = {
   meta: {
-    title: "SteamGacha",
-    description: "Steam game gacha packs: collection and achievements.",
+    title: "GameGacha",
+    description:
+      "Unofficial fan card packs from public PC game store listings. Not affiliated with Valve.",
   },
   nav: {
+    brand: "GameGacha",
     pack: "Pack",
     collection: "Collection",
     stats: "Stats",
@@ -30,10 +32,16 @@ export const en: Messages = {
     coins: "c.",
     coinsTitle: "Coins",
   },
+  legal: {
+    line1:
+      "Independent fan project for personal entertainment only. Not affiliated with, endorsed by, sponsored by, or approved by Valve Corporation.",
+    line2:
+      "Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.",
+    line3:
+      "Game information is derived from publicly available store listings; accuracy and availability are not guaranteed. Cards are not official products, Steam Wallet items, or tradable goods.",
+  },
   home: {
-    title: "Open a Steam pack",
-    subtitle:
-      "Five game cards with rarity and stats from Steam store data.",
+    title: "Open a card pack",
   },
   rarity: {
     common: "Common",
@@ -45,7 +53,7 @@ export const en: Messages = {
   },
   gameCard: {
     baseGame: "Base game",
-    typeSteam: "Type: Steam",
+    typeSteam: "Listing: PC store",
     attack: "Attack",
     defense: "Defense",
     weakness: "Weakness",
@@ -54,19 +62,18 @@ export const en: Messages = {
     resistValue: "-{{n}} noise",
     metacriticShort: "Metacritic {{n}}",
     positivePercent: "{{n}}% positive",
-    noUserReviewsSteam: "No user reviews on Steam",
+    noUserReviewsSteam: "No user reviews on listing",
     reviewsTotal: "{{n}} reviews",
-    store: "Steam",
+    store: "Store page",
+    metricsFallback: "Listing",
   },
   pack: {
     kindLabel: "Pack type",
     standard: "Standard",
     budget: "Budget",
     premium: "Premium",
-    hintMain:
-      "Standard — free pulls only ({{freeLeft}}/{{freeMax}} today). Budget 20 · Premium 40 coins. Pity rare+ every {{pity}} packs without rare+.",
-    hintCoinsLabel: "Coins:",
-    hintDustLabel: "Dust:",
+    hintSummary:
+      "{{freeLeft}} of {{freeMax}} free opens left today. If you open {{pity}} packs in a row without rare or better, the next pack guarantees rare+.",
     loading: "Drawing cards…",
     tearing: "Opening pack…",
     openStandardFree: "Open standard pack (free)",
@@ -103,13 +110,14 @@ export const en: Messages = {
     tearLong: "Tear line",
     tearShort: "Tear",
     gacha: "GACHA",
+    packMark: "Fan",
     standard: face(
       "Series I",
       "Collector's",
       "set",
       "Tear line",
       "cards",
-      "Random Steam games · not for resale",
+      "Random listings · not for resale · unofficial",
     ),
     budget: face(
       "Economy",
@@ -125,7 +133,7 @@ export const en: Messages = {
       "collection",
       "Tear line",
       "cards",
-      "Better rare odds · Steam",
+      "Better rare odds · fan pack",
     ),
   },
   collection: {
@@ -153,7 +161,7 @@ export const en: Messages = {
     rarities: "Rarities",
     favoriteGenre: "Favorite genre",
     favoriteGenreHint:
-      "By number of cards with this genre in Steam data. If empty — open new packs after an update.",
+      "By number of cards with this genre in saved listing data. If empty — open new packs after an update.",
   },
   achievements: {
     pageTitle: "Achievements",
@@ -194,7 +202,7 @@ export const en: Messages = {
         description: "Log in 3 days in a row.",
       },
       streak_7: {
-        title: "Steam week",
+        title: "Seven-day streak",
         description: "Log in 7 days in a row.",
       },
       first_rare_plus_pity: {

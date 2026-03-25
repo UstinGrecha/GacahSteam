@@ -140,15 +140,33 @@ function BoosterFaceFull({
   switch (kind) {
     case "budget":
       return (
-        <FaceBudget W={W} H={H} copy={booster.budget} brand={booster.gacha} />
+        <FaceBudget
+          W={W}
+          H={H}
+          copy={booster.budget}
+          brand={booster.gacha}
+          packMark={booster.packMark}
+        />
       );
     case "premium":
       return (
-        <FacePremium W={W} H={H} copy={booster.premium} brand={booster.gacha} />
+        <FacePremium
+          W={W}
+          H={H}
+          copy={booster.premium}
+          brand={booster.gacha}
+          packMark={booster.packMark}
+        />
       );
     default:
       return (
-        <FaceStandard W={W} H={H} copy={booster.standard} brand={booster.gacha} />
+        <FaceStandard
+          W={W}
+          H={H}
+          copy={booster.standard}
+          brand={booster.gacha}
+          packMark={booster.packMark}
+        />
       );
   }
 }
@@ -158,11 +176,13 @@ function FaceStandard({
   H,
   copy,
   brand,
+  packMark,
 }: {
   W: number;
   H: number;
   copy: BoosterFaceCopy;
   brand: string;
+  packMark: string;
 }) {
   return (
     <div
@@ -179,7 +199,7 @@ function FaceStandard({
             {copy.badge}
           </span>
           <span className="text-[8px] font-black uppercase tracking-[0.15em] text-zinc-500">
-            Steam
+            {packMark}
           </span>
         </div>
         <p className="relative mt-2 text-center font-[family-name:var(--font-geist-sans)] text-[11px] font-extrabold uppercase leading-tight tracking-wide text-[#fef3c7] drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
@@ -257,11 +277,13 @@ function FaceBudget({
   H,
   copy,
   brand,
+  packMark,
 }: {
   W: number;
   H: number;
   copy: BoosterFaceCopy;
   brand: string;
+  packMark: string;
 }) {
   return (
     <div
@@ -282,7 +304,7 @@ function FaceBudget({
             {copy.badge}
           </span>
           <span className="text-[8px] font-black uppercase tracking-[0.12em] text-stone-600">
-            Steam
+            {packMark}
           </span>
         </div>
         <p className="relative mt-2 text-center text-[10px] font-extrabold uppercase leading-tight tracking-wide text-stone-300 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
@@ -350,11 +372,13 @@ function FacePremium({
   H,
   copy,
   brand,
+  packMark,
 }: {
   W: number;
   H: number;
   copy: BoosterFaceCopy;
   brand: string;
+  packMark: string;
 }) {
   return (
     <div
@@ -372,7 +396,7 @@ function FacePremium({
             {copy.badge}
           </span>
           <span className="text-[8px] font-black uppercase tracking-[0.15em] text-indigo-300/60">
-            Steam
+            {packMark}
           </span>
         </div>
         <p className="relative mt-2 text-center text-[11px] font-extrabold uppercase leading-tight tracking-wide text-transparent bg-gradient-to-b from-[#fef9c3] to-[#d97706] bg-clip-text drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]">

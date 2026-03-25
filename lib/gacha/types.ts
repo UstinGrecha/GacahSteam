@@ -31,12 +31,14 @@ export type SteamCard = {
   score: number;
   positivePercent: number;
   metacritic: number | null;
-  /** Пользовательские отзывы Steam; влияет на жёсткий чекпоинт качества при расчёте тира. */
+  /** Пользовательские отзывы Steam. */
   hasUserReviews: boolean;
   /**
    * Число отзывов из recommendations.total; −1 = старые сохранения без поля (не показываем число).
    */
   reviewCount: number;
+  /** Дата релиза (мс) из Steam; нужна чтобы при загрузке из localStorage совпадала редкость с моментом выпадения. */
+  releaseDateMs: number | null;
   /** review_score_desc из Store API */
   reviewScoreDesc: string | null;
   /** Жанры из Steam (описания), могут быть пустыми */

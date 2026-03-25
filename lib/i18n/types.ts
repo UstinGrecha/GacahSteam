@@ -14,6 +14,7 @@ export type BoosterFaceCopy = {
 export type Messages = {
   meta: { title: string; description: string };
   nav: {
+    brand: string;
     pack: string;
     collection: string;
     stats: string;
@@ -22,7 +23,12 @@ export type Messages = {
     coins: string;
     coinsTitle: string;
   };
-  home: { title: string; subtitle: string };
+  legal: {
+    line1: string;
+    line2: string;
+    line3: string;
+  };
+  home: { title: string };
   rarity: {
     common: string;
     uncommon: string;
@@ -45,15 +51,15 @@ export type Messages = {
     noUserReviewsSteam: string;
     reviewsTotal: string;
     store: string;
+    /** Запасной подпись в блоке метрик, без товарного знака */
+    metricsFallback: string;
   };
   pack: {
     kindLabel: string;
     standard: string;
     budget: string;
     premium: string;
-    hintMain: string;
-    hintCoinsLabel: string;
-    hintDustLabel: string;
+    hintSummary: string;
     loading: string;
     tearing: string;
     openStandardFree: string;
@@ -89,6 +95,8 @@ export type Messages = {
     tearLong: string;
     tearShort: string;
     gacha: string;
+    /** Короткая пометка на макете пака (не логотип Steam) */
+    packMark: string;
     standard: BoosterFaceCopy;
     budget: BoosterFaceCopy;
     premium: BoosterFaceCopy;

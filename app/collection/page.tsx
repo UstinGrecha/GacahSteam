@@ -2,7 +2,7 @@ import { CollectionView } from "./CollectionView";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Коллекция — SteamGacha",
+  title: "Collection — GameGacha",
 };
 
 export default function CollectionPage() {

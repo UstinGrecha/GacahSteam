@@ -3,7 +3,10 @@ import type { SteamAppDetailsResponse } from "@/lib/steam/types";
 
 export const dynamic = "force-dynamic";
 
-/** Steam Store: похоже на браузер; без Origin иногда стабильнее для серверного fetch. */
+/**
+ * Прокси к публичному Store API для фан-проекта. Не аффилирован с Valve.
+ * User-Agent как у обычного браузера; без Origin иногда стабильнее для серверного fetch.
+ */
 const STEAM_HEADERS: Record<string, string> = {
   "User-Agent":
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",

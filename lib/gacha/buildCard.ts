@@ -64,6 +64,7 @@ export function buildSteamCard(
     metacritic: metrics.metacritic,
     hasUserReviews: metrics.hasUserReviews,
     reviewCount: metrics.reviewCount,
+    releaseDateMs: metrics.releaseDateMs,
     reviewScoreDesc,
     genres,
   };

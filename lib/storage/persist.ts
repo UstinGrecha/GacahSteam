@@ -15,6 +15,10 @@ const KEY_LEGACY = "steamgacha:v1";
 
 function cardToMetrics(c: SteamCard): AppMetrics {
   const rc = c.reviewCount < 0 ? 0 : Math.max(0, Math.floor(c.reviewCount));
+  const rd =
+    typeof c.releaseDateMs === "number" && Number.isFinite(c.releaseDateMs)
+      ? c.releaseDateMs
+      : null;
   return {
     positivePercent: c.positivePercent,
     hasUserReviews: Boolean(c.hasUserReviews && rc > 0),
@@ -22,7 +26,7 @@ function cardToMetrics(c: SteamCard): AppMetrics {
     priceFinalUsd: 0,
     reviewCount: rc,
     shortDescriptionLength: 220,
-    releaseDateMs: null,
+    releaseDateMs: rd,
   };
 }
 
@@ -31,6 +35,7 @@ function normalizeSteamCard(c: SteamCard): SteamCard {
     hasUserReviews?: boolean;
     reviewCount?: number;
     reviewScoreDesc?: string | null;
+    releaseDateMs?: number | null;
   };
   const hasNewReviewFields =
     typeof raw.hasUserReviews === "boolean" &&
@@ -47,10 +52,16 @@ function normalizeSteamCard(c: SteamCard): SteamCard {
     hasUserReviews = reviewCount > 0;
   }
 
+  const releaseDateMs =
+    typeof raw.releaseDateMs === "number" && Number.isFinite(raw.releaseDateMs)
+      ? raw.releaseDateMs
+      : null;
+
   const base: SteamCard = {
     ...c,
     hasUserReviews,
     reviewCount,
+    releaseDateMs,
   };
 
   const metrics = cardToMetrics(base);

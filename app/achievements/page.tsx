@@ -2,7 +2,7 @@ import { AchievementsView } from "./AchievementsView";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Достижения — SteamGacha",
+  title: "Achievements — GameGacha",
 };
 
 export default function AchievementsPage() {

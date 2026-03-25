@@ -40,7 +40,7 @@ function SteamMetricsLine({ card }: { card: SteamCard }) {
     } else if (parts.length === 0) {
       parts.push(
         <span key="st" className="text-zinc-600">
-          Steam
+          {t("gameCard.metricsFallback")}
         </span>,
       );
     }
@@ -76,7 +76,7 @@ function SteamMetricsLine({ card }: { card: SteamCard }) {
     if (parts.length === 0) {
       parts.push(
         <span key="st2" className="text-zinc-600">
-          Steam
+          {t("gameCard.metricsFallback")}
         </span>,
       );
     }

@@ -286,13 +286,13 @@ export function PackOpener() {
         : t("pack.openForCoins", { n: coinPrice });
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex w-full flex-col items-center gap-10">
       <div className="flex w-full max-w-md flex-col items-center gap-4">
-        <div className="flex w-full flex-col gap-2 rounded-xl border border-zinc-800 bg-zinc-900/40 p-3 text-sm text-zinc-300">
+        <div className="flex w-full flex-col items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/40 p-3 text-center text-sm text-zinc-300">
           <span className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
             {t("pack.kindLabel")}
           </span>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap justify-center gap-2">
             {(
               [
                 ["standard", "pack.standard"],
@@ -315,17 +315,12 @@ export function PackOpener() {
               </button>
             ))}
           </div>
-          <p className="text-[11px] text-zinc-500">
-            {t("pack.hintMain", {
+          <p className="text-balance text-[11px] text-zinc-500">
+            {t("pack.hintSummary", {
               freeLeft,
               freeMax: FREE_PACKS_PER_DAY,
               pity: PITY_PACKS,
-            })}{" "}
-            {t("pack.hintCoinsLabel")}{" "}
-            <span className="font-semibold text-amber-200">{state.coins}</span>
-            {", "}
-            {t("pack.hintDustLabel")}{" "}
-            <span className="font-semibold text-violet-200">{state.dust}</span>
+            })}
           </p>
         </div>
 

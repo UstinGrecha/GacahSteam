@@ -28,9 +28,15 @@ export function rarityTier(r: Rarity): number {
   return RARITY_ORDER.indexOf(r);
 }
 
-/** Более низкий тир из двух (пересечение «массы» и «качества» в жёсткой модели). */
+/** Более низкий тир из двух. */
 export function minRarityByTier(a: Rarity, b: Rarity): Rarity {
   return RARITY_ORDER[Math.min(rarityTier(a), rarityTier(b))];
+}
+
+/** Индекс тира 0…5 → редкость (для лестницы отзывов + возраст релиза). */
+export function rarityAtTierIndex(idx: number): Rarity {
+  const j = clamp(Math.round(idx), 0, RARITY_ORDER.length - 1);
+  return RARITY_ORDER[j]!;
 }
 
 export function rarityScoreBounds(r: Rarity): [number, number] {
@@ -50,7 +56,7 @@ export function computeScore(m: AppMetrics): number {
   return applyCultReviewMassFloors(computeCultPresenceScore(m), m.reviewCount);
 }
 
-/** Маппинг числа на тир (нормализация сохранений, тесты). Редкость карты — computeStrictRarity. */
+/** Маппинг числа на тир (нормализация сохранений, тесты). Редкость карты — отзывы + дата релиза (rarityStrict). */
 export function scoreToRarity(score: number): Rarity {
   if (score >= T_LEGEND) return "legend";
   if (score >= T_HOLO) return "holo";

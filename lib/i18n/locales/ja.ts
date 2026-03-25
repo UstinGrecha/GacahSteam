@@ -18,10 +18,12 @@ const face = (
 
 export const ja: Messages = {
   meta: {
-    title: "SteamGacha",
-    description: "Steamゲームのガチャパック：コレクションと実績。",
+    title: "GameGacha",
+    description:
+      "非公式ファン向け：公開ストア情報に基づくカードパック。Valve とは無関係です。",
   },
   nav: {
+    brand: "GameGacha",
     pack: "パック",
     collection: "コレクション",
     stats: "統計",
@@ -30,10 +32,16 @@ export const ja: Messages = {
     coins: "コイン",
     coinsTitle: "コイン",
   },
+  legal: {
+    line1:
+      "本サイトは個人の娯楽用の非公式ファン作品です。Valve Corporation とは関係なく、承認・後援・スポンサーでもありません。",
+    line2:
+      "Steam および Steam ロゴは、米国およびその他の国における Valve Corporation の商標または登録商標です。",
+    line3:
+      "表示内容は公開されているストア情報に基づきます。正確性・可用性は保証されません。カードは公式製品・Steam ウォレット商品・再販用ではありません。",
+  },
   home: {
-    title: "Steamパックを開ける",
-    subtitle:
-      "Steamストアのデータからレア度とステータス付きのゲームカードが5枚。",
+    title: "カードパックを開ける",
   },
   rarity: {
     common: "コモン",
@@ -45,7 +53,7 @@ export const ja: Messages = {
   },
   gameCard: {
     baseGame: "基本ゲーム",
-    typeSteam: "タイプ: Steam",
+    typeSteam: "掲載: PCストア",
     attack: "攻撃",
     defense: "防御",
     weakness: "弱点",
@@ -54,19 +62,18 @@ export const ja: Messages = {
     resistValue: "ノイズ −{{n}}",
     metacriticShort: "Metacritic {{n}}",
     positivePercent: "好評 {{n}}%",
-    noUserReviewsSteam: "Steamにユーザー評価なし",
+    noUserReviewsSteam: "ストア掲載にユーザー評価なし",
     reviewsTotal: "レビュー {{n}}件",
-    store: "Steam",
+    store: "ストアページ",
+    metricsFallback: "掲載",
   },
   pack: {
     kindLabel: "パックの種類",
     standard: "スタンダード",
     budget: "バジェット",
     premium: "プレミアム",
-    hintMain:
-      "スタンダードは無料枠のみ（本日 {{freeLeft}}/{{freeMax}}）。バジェット20・プレミアム40コイン。{{pity}}パック連続でレア+なしのときピティ。",
-    hintCoinsLabel: "コイン:",
-    hintDustLabel: "ダスト:",
+    hintSummary:
+      "本日の無料回数: {{freeLeft}}/{{freeMax}}。レア以上が{{pity}}パック連続で出ないと、次のパックでレア以上が確定します。",
     loading: "カードを引いています…",
     tearing: "パックを開封中…",
     openStandardFree: "スタンダードパックを開ける（無料）",
@@ -103,13 +110,14 @@ export const ja: Messages = {
     tearLong: "切り取り線",
     tearShort: "切り取り",
     gacha: "GACHA",
+    packMark: "Fan",
     standard: face(
       "シリーズ I",
       "コレクター",
       "セット",
       "切り取り線",
       "枚",
-      "ランダムなSteamゲーム · 再販禁止",
+      "ランダム掲載 · 再販禁止 · 非公式",
     ),
     budget: face(
       "エコノミー",
@@ -125,7 +133,7 @@ export const ja: Messages = {
       "コレクション",
       "切り取り線",
       "枚",
-      "レア率アップ · Steam",
+      "レア率アップ · ファンパック",
     ),
   },
   collection: {
@@ -153,7 +161,7 @@ export const ja: Messages = {
     rarities: "レア度",
     favoriteGenre: "お気に入りジャンル",
     favoriteGenreHint:
-      "Steamデータでそのジャンルのカード枚数が多い順。空ならアップデート後に新規パックを。",
+      "保存された掲載データでそのジャンルの枚数が多い順。空なら更新後に新規パックを。",
   },
   achievements: {
     pageTitle: "実績",
@@ -194,7 +202,7 @@ export const ja: Messages = {
         description: "3日連続でログイン。",
       },
       streak_7: {
-        title: "Steamウィーク",
+        title: "7日連続ログイン",
         description: "7日連続でログイン。",
       },
       first_rare_plus_pity: {

@@ -18,10 +18,12 @@ const face = (
 
 export const zh: Messages = {
   meta: {
-    title: "SteamGacha",
-    description: "Steam 游戏抽卡包：收藏与成就。",
+    title: "GameGacha",
+    description:
+      "非官方粉丝向卡包，数据来自公开商店信息。与 Valve 无任何关联。",
   },
   nav: {
+    brand: "GameGacha",
     pack: "卡包",
     collection: "收藏",
     stats: "统计",
@@ -30,9 +32,16 @@ export const zh: Messages = {
     coins: "币",
     coinsTitle: "金币",
   },
+  legal: {
+    line1:
+      "本站为个人娱乐用的独立粉丝作品，与 Valve Corporation 无关联，亦未获其认可、赞助或支持。",
+    line2:
+      "Steam 与 Steam 徽标为 Valve Corporation 在美国及/或其他国家（地区）的商标和/或注册商标。",
+    line3:
+      "游戏信息来源于公开商店页面，不保证准确与可用。卡牌并非官方商品、非 Steam 钱包物品、不可用于转售。",
+  },
   home: {
-    title: "开启 Steam 卡包",
-    subtitle: "五张游戏卡，稀有度与数值来自 Steam 商店数据。",
+    title: "开启卡包",
   },
   rarity: {
     common: "普通",
@@ -44,7 +53,7 @@ export const zh: Messages = {
   },
   gameCard: {
     baseGame: "基础游戏",
-    typeSteam: "类型：Steam",
+    typeSteam: "来源：PC 商店页面",
     attack: "攻击",
     defense: "防御",
     weakness: "弱点",
@@ -53,19 +62,18 @@ export const zh: Messages = {
     resistValue: "噪音 −{{n}}",
     metacriticShort: "Metacritic {{n}}",
     positivePercent: "{{n}}% 好评",
-    noUserReviewsSteam: "Steam 暂无用户评测",
+    noUserReviewsSteam: "该商店页面暂无用户评测",
     reviewsTotal: "{{n}} 条评测",
-    store: "Steam",
+    store: "商店页面",
+    metricsFallback: "商店",
   },
   pack: {
     kindLabel: "卡包类型",
     standard: "标准",
     budget: "经济",
     premium: "高级",
-    hintMain:
-      "标准仅每日免费次数（今日 {{freeLeft}}/{{freeMax}}）。经济 20 · 高级 40 金币。连续 {{pity}} 包无稀有+ 触发保底。",
-    hintCoinsLabel: "金币:",
-    hintDustLabel: "粉尘:",
+    hintSummary:
+      "今日免费次数：{{freeLeft}}/{{freeMax}}。连续 {{pity}} 包没有稀有或更高，则下一包保底稀有+。",
     loading: "正在抽卡…",
     tearing: "正在拆包…",
     openStandardFree: "开启标准包（免费）",
@@ -102,13 +110,14 @@ export const zh: Messages = {
     tearLong: "撕开口",
     tearShort: "撕开",
     gacha: "GACHA",
+    packMark: "同人",
     standard: face(
       "系列 I",
       "收藏",
       "套装",
       "撕开口",
       "张",
-      "随机 Steam 游戏 · 不可转售",
+      "随机商店条目 · 不可转售 · 非官方",
     ),
     budget: face(
       "经济",
@@ -124,7 +133,7 @@ export const zh: Messages = {
       "收藏",
       "撕开口",
       "张",
-      "更高稀有概率 · Steam",
+      "更高稀有概率 · 同人包",
     ),
   },
   collection: {
@@ -151,7 +160,7 @@ export const zh: Messages = {
     rarities: "稀有度",
     favoriteGenre: "最常类型",
     favoriteGenreHint:
-      "按 Steam 数据中该类型卡牌数量。若为空 — 更新后多开几包。",
+      "按已保存的商店数据中该类型卡牌数量。若为空 — 更新后多开几包。",
   },
   achievements: {
     pageTitle: "成就",
@@ -192,7 +201,7 @@ export const zh: Messages = {
         description: "连续 3 天登录。",
       },
       streak_7: {
-        title: "Steam 一周",
+        title: "连续七日",
         description: "连续 7 天登录。",
       },
       first_rare_plus_pity: {

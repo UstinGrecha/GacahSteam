@@ -18,8 +18,12 @@ export function NavBar() {
   return (
     <header className="sticky top-0 z-40 border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="text-lg font-bold tracking-tight text-zinc-50">
-          Steam<span className="text-sky-400">Gacha</span>
+        <Link
+          href="/"
+          className="text-lg font-bold tracking-tight text-zinc-50"
+          title={t("nav.brand")}
+        >
+          {t("nav.brand")}
         </Link>
         <div className="flex flex-wrap items-center justify-end gap-3">
           <div
