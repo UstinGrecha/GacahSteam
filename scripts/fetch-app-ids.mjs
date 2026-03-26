@@ -10,7 +10,8 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outPath = path.join(__dirname, "..", "data", "steam-app-ids.json");
 
-const MAX_IDS = 10_000;
+/** Всего id в файле: серия 1 + серия 2 (см. lib/gacha/steamPools.ts). */
+const MAX_IDS = 15_000;
 const GAMES_JSON_URL =
   "https://raw.githubusercontent.com/jsnli/steamappidlist/master/data/games_appid.json";
 
