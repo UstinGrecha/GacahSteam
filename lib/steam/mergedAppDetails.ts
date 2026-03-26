@@ -2,7 +2,14 @@ import {
   getCachedAppDetails,
   setCachedAppDetails,
 } from "@/lib/steam/appDetailsCache";
-import type { SteamAppDetailsResponse } from "@/lib/steam/types";
+import {
+  loadSteamDetailsFromDb,
+  persistSteamDetailsToDb,
+} from "@/lib/steam/steamDetailsDbCache";
+import type {
+  SteamAppDetailsEntry,
+  SteamAppDetailsResponse,
+} from "@/lib/steam/types";
 
 const STEAM_HEADERS: Record<string, string> = {
   "User-Agent":
@@ -102,18 +109,6 @@ async function fetchOneAppIdUncached(
   }
 }
 
-async function fetchOneAppIdWithCache(
-  appid: number,
-): Promise<SteamAppDetailsResponse | null> {
-  const hit = getCachedAppDetails(appid);
-  if (hit) return { [String(appid)]: hit };
-  const part = await fetchOneAppIdUncached(appid);
-  if (!part) return null;
-  const ent = part[String(appid)];
-  if (ent?.success && ent.data) setCachedAppDetails(appid, ent);
-  return part;
-}
-
 async function runPool<T>(
   items: T[],
   limit: number,
@@ -154,11 +149,21 @@ export async function fetchMergedSteamDetails(
     if (hit) merged[String(appid)] = hit;
   }
 
-  const missList = unique.filter((id) => merged[String(id)] == null);
+  let missList = unique.filter((id) => merged[String(id)] == null);
+
+  if (missList.length > 0) {
+    const fromDb = await loadSteamDetailsFromDb(missList);
+    for (const [appid, ent] of fromDb) {
+      merged[String(appid)] = ent;
+    }
+    missList = unique.filter((id) => merged[String(id)] == null);
+  }
+
+  const toPersist: Array<{ appid: number; entry: SteamAppDetailsEntry }> = [];
 
   if (missList.length > 0) {
     await runPool(missList, PER_ID_CONCURRENCY, async (appid) => {
-      const part = await fetchOneAppIdWithCache(appid);
+      const part = await fetchOneAppIdUncached(appid);
       if (!part) {
         failures.push(appid);
         return;
@@ -166,11 +171,18 @@ export async function fetchMergedSteamDetails(
       const ent = part[String(appid)];
       if (ent) {
         merged[String(appid)] = ent;
-        if (ent.success && ent.data) setCachedAppDetails(appid, ent);
+        if (ent.success && ent.data) {
+          setCachedAppDetails(appid, ent);
+          toPersist.push({ appid, entry: ent });
+        }
       } else {
         failures.push(appid);
       }
     });
+  }
+
+  if (toPersist.length > 0) {
+    await persistSteamDetailsToDb(toPersist);
   }
 
   const mergedKeys = Object.keys(merged).filter((k) => k !== "_meta");

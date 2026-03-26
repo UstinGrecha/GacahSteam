@@ -33,6 +33,13 @@ model GameSave {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+/// Ответ Steam appdetails по appid: общий кэш для всех пользователей (меньше запросов к store.steampowered.com).
+model SteamAppDetailsCache {
+  appid       Int      @id
+  payloadJson String
+  updatedAt   DateTime @updatedAt
+}
+
 model Account {
   id                String  @id @default(cuid())
   userId            String
