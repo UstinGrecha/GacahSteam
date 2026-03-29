@@ -1,3 +1,4 @@
+import { getCardTraitDef } from "@/lib/gacha/cardTraits";
 import type { Rarity, SteamCard } from "@/lib/gacha/types";
 import {
   combatResistValue,
@@ -13,6 +14,38 @@ import {
   raritySteamTypeOrbClasses,
   rarityTcgCode,
 } from "./rarityStyles";
+
+function CardTraitsBlock({ card }: { card: SteamCard }) {
+  const { t } = useI18n();
+  const traits = card.traits?.length ? card.traits : [];
+  if (traits.length === 0) return null;
+  return (
+    <div className="mx-2 mb-2 rounded border border-violet-400/50 bg-violet-50/90 px-2 py-1.5 text-[8px] leading-snug text-zinc-800 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.4)]">
+      <div className="mb-1 text-[9px] font-black uppercase tracking-wide text-violet-900">
+        {t("gameCard.traits")}
+      </div>
+      <ul className="space-y-1">
+        {traits.map((tr) => {
+          const def = getCardTraitDef(tr.id);
+          const line = def
+            ? def.effectTemplate.replace(/\{p\}/g, String(tr.potency))
+            : null;
+          return (
+            <li key={tr.id} className="border-b border-violet-200/60 pb-1 last:border-0 last:pb-0">
+              <span className="font-extrabold text-zinc-900">
+                {def?.name ?? tr.id}{" "}
+                <span className="tabular-nums text-violet-700">({tr.potency}%)</span>
+              </span>
+              {line ? (
+                <span className="mt-0.5 block font-medium text-zinc-700">{line}</span>
+              ) : null}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
 
 /** Подпись с реальными данными Store: Metacritic, %, описание отзывов, число отзывов. */
 function SteamMetricsLine({ card }: { card: SteamCard }) {
@@ -115,6 +148,8 @@ function pokemonHeaderStrip(r: Rarity): string {
       return "from-[#a5f3fc] via-[#e9d5ff] to-[#22d3ee]";
     case "legend":
       return "from-[#fde047] via-[#fbbf24] to-[#f59e0b]";
+    case "champion":
+      return "from-[#fecdd3] via-[#fb7185] to-[#be123c]";
     default:
       return "from-zinc-400 to-zinc-500";
   }
@@ -146,6 +181,7 @@ export function GameCard({ card, entranceIndex, variant = "default" }: GameCardP
   const delayMs = animated ? entranceIndex * 115 : undefined;
   const isDeck = variant === "deck";
   const isLegend = card.rarity === "legend";
+  const isChampion = card.rarity === "champion";
   const isHolo = card.rarity === "holo";
   const hp = cardHpDisplayed(card);
   const weaknessMult = combatWeaknessMultiplier(card.rarity);
@@ -164,11 +200,13 @@ export function GameCard({ card, entranceIndex, variant = "default" }: GameCardP
           "group relative flex w-full max-w-[min(92vw,280px)] flex-col overflow-hidden rounded-[12px]",
           "border-[5px] border-[#c9a227] bg-gradient-to-b from-[#fffef7] via-[#fdf3cf] to-[#ecd78a]",
           "shadow-[0_10px_32px_rgba(0,0,0,0.38),inset_0_1px_0_rgba(255,255,255,0.7)]",
-          isLegend
-            ? "sg-pokemon-legend border-[#eab308] shadow-[0_0_0_2px_rgba(251,191,36,0.45),0_12px_40px_rgba(245,158,11,0.35)]"
-            : isHolo
-              ? "sg-pokemon-holo-tier border-[#22d3ee] shadow-[0_0_0_2px_rgba(34,211,238,0.42),0_12px_38px_rgba(192,38,211,0.28)]"
-              : "",
+          isChampion
+            ? "sg-pokemon-legend border-[#f43f5e] shadow-[0_0_0_2px_rgba(244,63,94,0.5),0_12px_44px_rgba(225,29,72,0.38)]"
+            : isLegend
+              ? "sg-pokemon-legend border-[#eab308] shadow-[0_0_0_2px_rgba(251,191,36,0.45),0_12px_40px_rgba(245,158,11,0.35)]"
+              : isHolo
+                ? "sg-pokemon-holo-tier border-[#22d3ee] shadow-[0_0_0_2px_rgba(34,211,238,0.42),0_12px_38px_rgba(192,38,211,0.28)]"
+                : "",
           isDeck
             ? "select-none [-webkit-touch-callout:none] [-webkit-user-select:none]"
             : "transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:shadow-2xl",
@@ -177,7 +215,7 @@ export function GameCard({ card, entranceIndex, variant = "default" }: GameCardP
           .join(" ")}
         onDragStart={isDeck ? (e) => e.preventDefault() : undefined}
       >
-        {isLegend ? (
+        {isChampion || isLegend ? (
           <div
             className="pointer-events-none absolute inset-0 z-[1] rounded-[7px] opacity-90 mix-blend-soft-light"
             aria-hidden
@@ -296,6 +334,8 @@ export function GameCard({ card, entranceIndex, variant = "default" }: GameCardP
               </span>
             </div>
           </div>
+
+          <CardTraitsBlock card={card} />
 
           {card.genres?.length ? (
             <p className="mx-2 mb-2 line-clamp-2 text-center text-[8px] font-semibold uppercase tracking-wide text-zinc-600">

@@ -8,11 +8,19 @@ import { applySellCardAtSlot } from "@/lib/economy/applySellCard";
 import { cardSellCoins } from "@/lib/economy/cardSellPrice";
 import { DUST_PER_TRIPLE_SALVAGE } from "@/lib/economy/constants";
 import type { Rarity } from "@/lib/gacha/types";
-import { useCallback, useMemo, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 
 const ALL: Rarity | "all" = "all";
 
 const rarityOrder: Rarity[] = [
+  "champion",
   "legend",
   "holo",
   "epic",
@@ -31,6 +39,9 @@ export function CollectionView({ embedded = false }: CollectionViewProps) {
   const [rarity, setRarity] = useState<Rarity | "all">(ALL);
   const [sellError, setSellError] = useState<string | null>(null);
   const [sellingKey, setSellingKey] = useState<string | null>(null);
+  const carouselRef = useRef<HTMLUListElement>(null);
+  const [carouselAtStart, setCarouselAtStart] = useState(true);
+  const [carouselAtEnd, setCarouselAtEnd] = useState(false);
 
   const flat = useMemo(
     () =>
@@ -136,6 +147,72 @@ export function CollectionView({ embedded = false }: CollectionViewProps) {
     [flat],
   );
 
+  const carouselScrollStride = useCallback(() => {
+    const root = carouselRef.current;
+    if (!root) return 300;
+    const first = root.querySelector("li");
+    if (!first) return Math.min(320, root.clientWidth * 0.88);
+    const style = getComputedStyle(root);
+    const gap = parseFloat(style.columnGap || style.gap || "24") || 24;
+    return first.getBoundingClientRect().width + gap;
+  }, []);
+
+  const updateCarouselScrollState = useCallback(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    const slack = 4;
+    setCarouselAtStart(scrollLeft <= slack);
+    setCarouselAtEnd(scrollLeft + clientWidth >= scrollWidth - slack);
+  }, []);
+
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    el.scrollTo({ left: 0, behavior: "auto" });
+    queueMicrotask(updateCarouselScrollState);
+  }, [query, rarity, updateCarouselScrollState]);
+
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    updateCarouselScrollState();
+    el.addEventListener("scroll", updateCarouselScrollState, { passive: true });
+    const ro = new ResizeObserver(updateCarouselScrollState);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", updateCarouselScrollState);
+      ro.disconnect();
+    };
+  }, [filtered.length, updateCarouselScrollState]);
+
+  const carouselScrollPrev = useCallback(() => {
+    carouselRef.current?.scrollBy({
+      left: -carouselScrollStride(),
+      behavior: "smooth",
+    });
+  }, [carouselScrollStride]);
+
+  const carouselScrollNext = useCallback(() => {
+    carouselRef.current?.scrollBy({
+      left: carouselScrollStride(),
+      behavior: "smooth",
+    });
+  }, [carouselScrollStride]);
+
+  const onCarouselKeyDown = useCallback(
+    (e: ReactKeyboardEvent<HTMLUListElement>) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        carouselScrollPrev();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        carouselScrollNext();
+      }
+    },
+    [carouselScrollPrev, carouselScrollNext],
+  );
+
   const Root = embedded ? "section" : "main";
   const Title = embedded ? "h2" : "h1";
 
@@ -233,29 +310,60 @@ export function CollectionView({ embedded = false }: CollectionViewProps) {
           {t("collection.empty")}
         </p>
       ) : (
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {filtered.map((c) => {
-            const price = cardSellCoins(c);
-            const rowKey = `${c.pullId}:${c.slotIndex}`;
-            const busy = sellingKey === rowKey;
-            return (
-              <li key={rowKey} className="flex flex-col">
-                <GameCard card={c} />
-                <p className="mt-1 text-center text-[10px] text-zinc-600">
-                  {new Date(c.openedAt).toLocaleString(bcp47)}
-                </p>
-                <button
-                  type="button"
-                  disabled={busy}
-                  onClick={() => void sellCard(c.pullId, c.slotIndex)}
-                  className="mt-2 rounded-lg border border-amber-700/50 bg-amber-950/35 px-2 py-1.5 text-center text-xs font-semibold text-amber-200/95 transition hover:bg-amber-900/40 disabled:opacity-45"
+        <div className="relative">
+          <p className="mb-2 text-center text-xs text-zinc-500 sm:text-left">
+            {t("collection.carouselSwipeHint")}
+          </p>
+          <button
+            type="button"
+            aria-label={t("collection.carouselPrev")}
+            disabled={carouselAtStart}
+            onClick={carouselScrollPrev}
+            className="absolute left-0 top-[40%] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-600 bg-zinc-900/95 text-lg leading-none text-zinc-100 shadow-lg backdrop-blur-sm transition hover:border-zinc-500 hover:bg-zinc-800 active:scale-95 disabled:pointer-events-none disabled:opacity-25 sm:left-0 sm:h-11 sm:w-11"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            aria-label={t("collection.carouselNext")}
+            disabled={carouselAtEnd}
+            onClick={carouselScrollNext}
+            className="absolute right-0 top-[40%] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-600 bg-zinc-900/95 text-lg leading-none text-zinc-100 shadow-lg backdrop-blur-sm transition hover:border-zinc-500 hover:bg-zinc-800 active:scale-95 disabled:pointer-events-none disabled:opacity-25 sm:right-0 sm:h-11 sm:w-11"
+          >
+            ›
+          </button>
+          <ul
+            ref={carouselRef}
+            tabIndex={0}
+            onKeyDown={onCarouselKeyDown}
+            className="flex snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-visible scroll-smooth py-2 pl-11 pr-11 [-ms-overflow-style:none] [scrollbar-width:none] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 sm:pl-12 sm:pr-12 [&::-webkit-scrollbar]:hidden"
+          >
+            {filtered.map((c) => {
+              const price = cardSellCoins(c);
+              const rowKey = `${c.pullId}:${c.slotIndex}`;
+              const busy = sellingKey === rowKey;
+              return (
+                <li
+                  key={rowKey}
+                  className="flex w-[min(100%,19rem)] shrink-0 snap-center flex-col sm:w-72"
                 >
-                  {busy ? "…" : t("collection.sellBtn", { n: price })}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+                  <GameCard card={c} />
+                  <p className="mt-1 text-center text-[10px] text-zinc-600">
+                    {new Date(c.openedAt).toLocaleString(bcp47)}
+                  </p>
+                  <button
+                    type="button"
+                    disabled={busy}
+                    onClick={() => void sellCard(c.pullId, c.slotIndex)}
+                    className="mt-2 rounded-lg border border-amber-700/50 bg-amber-950/35 px-2 py-1.5 text-center text-xs font-semibold text-amber-200/95 transition hover:bg-amber-900/40 disabled:opacity-45"
+                  >
+                    {busy ? "…" : t("collection.sellBtn", { n: price })}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       )}
 
       {state.pulls.length > 0 ? (

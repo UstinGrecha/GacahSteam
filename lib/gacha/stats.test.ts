@@ -9,6 +9,7 @@ import {
   combatResistValue,
   combatRetreatCost,
   combatWeaknessMultiplier,
+  rarityOneStepDown,
   scoreToRarity,
 } from "./stats";
 
@@ -127,6 +128,17 @@ describe("scoreToRarity", () => {
     expect(scoreToRarity(87)).toBe("holo");
     expect(scoreToRarity(88)).toBe("legend");
     expect(scoreToRarity(90)).toBe("legend");
+    expect(scoreToRarity(93)).toBe("legend");
+    expect(scoreToRarity(94)).toBe("champion");
+    expect(scoreToRarity(99)).toBe("champion");
+  });
+});
+
+describe("rarityOneStepDown", () => {
+  it("steps legend→holo and common→null", () => {
+    expect(rarityOneStepDown("champion")).toBe("legend");
+    expect(rarityOneStepDown("legend")).toBe("holo");
+    expect(rarityOneStepDown("common")).toBe(null);
   });
 });
 

@@ -8,6 +8,7 @@ import type { Rarity } from "@/lib/gacha/types";
 import { useMemo } from "react";
 
 const ORDER: Rarity[] = [
+  "champion",
   "legend",
   "holo",
   "epic",

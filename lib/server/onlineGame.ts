@@ -10,22 +10,23 @@ import {
   consumeStandardFreePackUtc,
   economySyncUtc,
   getFreeStandardOpensAfterUtcSync,
-  isAtPackOpensDailyCapUtc,
 } from "@/lib/economy/syncUtc";
+import { buildSteamCard } from "@/lib/gacha/buildCard";
 import { getPrisma } from "@/lib/db/prisma";
 import {
-  fetchOneNewCardWithFetcher,
-  openPackFromPoolWithFetcher,
+  fetchOneNewCardFromDbPool,
+  openPackFromDbPool,
 } from "@/lib/gacha/openPack";
+import { RAID_BOSS_REWARD_APPIDS } from "@/lib/gacha/raidReward";
+import { currentRaidWeekKey } from "@/lib/raid/weeklyBoss";
+import { fetchSteamPoolResponseForIds } from "@/lib/steam/steamPoolDb";
 import { packCoinCost, type PackKind } from "@/lib/gacha/packKinds";
 import {
   isSeriesPacksAvailable,
-  poolForSeries,
   type CardSeries,
 } from "@/lib/gacha/steamPools";
 import { isRarePlus } from "@/lib/gacha/stats";
 import type { SteamCard } from "@/lib/gacha/types";
-import { fetchMergedSteamDetails } from "@/lib/steam/mergedAppDetails";
 import {
   defaultState,
   hydrateStoredStateFromApi,
@@ -33,7 +34,11 @@ import {
 import type { StoredState } from "@/lib/storage/types";
 import { randomInt, randomUUID } from "node:crypto";
 
-const steamFetcher = (ids: number[]) => fetchMergedSteamDetails(ids);
+const RAID_REWARD_SERIES = 1 as CardSeries;
+
+function weekKeyOk(key: string): boolean {
+  return /^\d{4}-W\d{2}$/.test(key);
+}
 
 function cloneState(s: StoredState): StoredState {
   return JSON.parse(JSON.stringify(s)) as StoredState;
@@ -95,6 +100,82 @@ export type OpenPackResult =
     }
   | { ok: false; code: string; message?: string };
 
+export type RaidRewardResult =
+  | { ok: true; state: StoredState; card: SteamCard; pullId: string }
+  | { ok: false; code: string; message?: string };
+
+export async function serverClaimRaidBossReward(
+  userId: string,
+  weekKey: string,
+): Promise<RaidRewardResult> {
+  if (!weekKeyOk(weekKey)) {
+    return { ok: false, code: "invalid_week" };
+  }
+  const expected = currentRaidWeekKey();
+  if (weekKey !== expected) {
+    return { ok: false, code: "week_mismatch" };
+  }
+
+  try {
+    const prisma = getPrisma();
+    let state = await loadAndSync(userId);
+
+    if (state.raid.lastRewardWeekKey === weekKey) {
+      return { ok: false, code: "already_claimed" };
+    }
+
+    const rewardIds = [...RAID_BOSS_REWARD_APPIDS];
+    const pool = await fetchSteamPoolResponseForIds(
+      rewardIds,
+      RAID_REWARD_SERIES,
+    );
+    for (const appid of rewardIds) {
+      const row = pool[String(appid)];
+      if (!row?.success || !row.data) {
+        return {
+          ok: false,
+          code: "pool_missing",
+          message: "Raid reward game is not in Steam pool (run seed:raid-reward).",
+        };
+      }
+    }
+
+    const rewardAppId = rewardIds[randomInt(0, rewardIds.length)];
+    const entry = pool[String(rewardAppId)];
+    const data = entry?.data;
+    if (!entry?.success || !data) {
+      return { ok: false, code: "build_failed" };
+    }
+    const card = buildSteamCard(rewardAppId, data);
+    if (!card || card.rarity !== "champion") {
+      return { ok: false, code: "build_failed" };
+    }
+    const pullId = randomUUID();
+
+    state.pulls.push({
+      id: pullId,
+      openedAt: new Date().toISOString(),
+      cards: [card],
+    });
+    const k = String(card.appid);
+    state.spareCopies[k] = (state.spareCopies[k] ?? 0) + 1;
+    state.raid = { lastRewardWeekKey: weekKey };
+
+    syncAchievements(state);
+
+    await prisma.gameSave.upsert({
+      where: { userId },
+      create: { userId, payload: serializeState(state) },
+      update: { payload: serializeState(state) },
+    });
+
+    return { ok: true, state: cloneState(state), card, pullId };
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "raid_reward_failed";
+    return { ok: false, code: "error", message };
+  }
+}
+
 export async function serverOpenPack(
   userId: string,
   packKind: PackKind,
@@ -108,9 +189,6 @@ export async function serverOpenPack(
     if (!isSeriesPacksAvailable(series)) {
       return { ok: false, code: "series_unavailable" };
     }
-    if (isAtPackOpensDailyCapUtc(state)) {
-      return { ok: false, code: "pack_cap" };
-    }
     if (openCost === null) {
       if (getFreeStandardOpensAfterUtcSync(state) <= 0) {
         return { ok: false, code: "no_free" };
@@ -119,10 +197,9 @@ export async function serverOpenPack(
       return { ok: false, code: "need_coins" };
     }
 
-    const pool = poolForSeries(series);
     const rng = serverRng();
     const forcePity = state.pity.packsSinceRarePlus >= PITY_PACKS;
-    const result = await openPackFromPoolWithFetcher(pool, rng, steamFetcher, {
+    const result = await openPackFromDbPool(series, rng, {
       packKind,
       forcePityRarePlus: forcePity,
     });
@@ -198,18 +275,11 @@ export async function serverRerollSlot(
       return { ok: false, code: "bad_pull" };
     }
 
-    const pool = poolForSeries(series);
     const rng = serverRng();
     const exclude = new Set(current.map((c) => c.appid));
     const idx = randomInt(0, current.length);
     const oldCard = current[idx]!;
-    const newCard = await fetchOneNewCardWithFetcher(
-      pool,
-      rng,
-      steamFetcher,
-      exclude,
-      packKind,
-    );
+    const newCard = await fetchOneNewCardFromDbPool(series, rng, exclude, packKind);
     if (!newCard) {
       return { ok: false, code: "replace_failed" };
     }

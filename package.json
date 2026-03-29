@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
+    "seed:steam-pool": "npx tsx scripts/seed-steam-pool.ts",
+    "seed:raid-reward": "npx tsx scripts/seed-raid-reward-app.ts",
+    "grant:pool-all": "npx tsx scripts/grant-pool-all-to-user.ts",
+    "wipe:collections": "npx tsx scripts/wipe-all-user-collections.ts",
+    "count:pool": "node scripts/count-pool.mjs",
     "postinstall": "prisma generate"
   },
   "dependencies": {

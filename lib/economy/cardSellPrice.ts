@@ -2,7 +2,7 @@ import { rarityTier } from "@/lib/gacha/stats";
 import type { SteamCard } from "@/lib/gacha/types";
 
 /** Базовые монеты по тиру редкости (common → legend). */
-const BASE_COINS_BY_TIER = [4, 8, 14, 24, 38, 55] as const;
+const BASE_COINS_BY_TIER = [4, 8, 14, 24, 38, 55, 72] as const;
 
 const POWER_FACTOR = 0.1;
 const MIN_SELL = 1;

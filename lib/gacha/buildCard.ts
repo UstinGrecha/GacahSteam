@@ -10,6 +10,8 @@ import {
   computeStrictRarity,
   strictContextFromSteamData,
 } from "./rarityStrict";
+import { rollCardTraitsForCard } from "./cardTraits";
+import { isRaidBossRewardAppid, promoteToChampionRarity } from "./raidReward";
 import { clamp, computeCombatStats, rarityScoreBounds } from "./stats";
 import type { Rarity, SteamCard } from "./types";
 
@@ -50,7 +52,7 @@ export function buildSteamCard(
   const genres = parseGenreDescriptions(data);
   const reviewScoreDesc = (data.review_score_desc ?? "").trim() || null;
 
-  return {
+  const card: SteamCard = {
     appid,
     name,
     headerImage,
@@ -67,5 +69,11 @@ export function buildSteamCard(
     releaseDateMs: metrics.releaseDateMs,
     reviewScoreDesc,
     genres,
+    traits: rollCardTraitsForCard(appid, rarity),
   };
+
+  if (isRaidBossRewardAppid(appid)) {
+    return promoteToChampionRarity(card);
+  }
+  return card;
 }

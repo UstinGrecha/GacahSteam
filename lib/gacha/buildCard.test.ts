@@ -25,6 +25,7 @@ describe("buildSteamCard rarity guards", () => {
       }),
     );
     expect(c?.rarity).toBe("common");
+    expect(c?.traits?.length).toBeGreaterThanOrEqual(1);
   });
 
   it("mid-size cult hit is at least rare, not common", () => {
@@ -40,5 +41,6 @@ describe("buildSteamCard rarity guards", () => {
     );
     expect(c).not.toBeNull();
     expect(["common", "uncommon"]).not.toContain(c!.rarity);
+    expect(c!.traits.length).toBeGreaterThanOrEqual(1);
   });
 });

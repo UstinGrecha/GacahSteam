@@ -11,6 +11,8 @@ export function NavBar() {
   const { status } = useSession();
   const guestLinks = [
     { href: "/", label: t("nav.pack") },
+    { href: "/raid", label: t("nav.raid") },
+    { href: "/market", label: t("nav.market") },
     { href: "/collection", label: t("nav.collection") },
     { href: "/stats", label: t("nav.stats") },
     { href: "/achievements", label: t("nav.achievements") },
@@ -18,6 +20,8 @@ export function NavBar() {
   ];
   const userLinks = [
     { href: "/", label: t("nav.pack") },
+    { href: "/raid", label: t("nav.raid") },
+    { href: "/market", label: t("nav.market") },
     { href: "/settings", label: t("nav.settings") },
   ];
   const links =

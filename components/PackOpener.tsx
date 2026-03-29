@@ -8,19 +8,10 @@ import {
 import {
   consumeStandardFreePack,
   getFreeStandardOpensAfterSync,
-  isAtPackOpensDailyCap,
 } from "@/lib/economy/sync";
-import {
-  getFreeStandardOpensAfterUtcSync,
-  isAtPackOpensDailyCapUtc,
-} from "@/lib/economy/syncUtc";
-import { fetchOneNewCard, openPackFromPool } from "@/lib/gacha/openPack";
-import {
-  POOL_SERIES_1,
-  type CardSeries,
-  isSeriesPacksAvailable,
-  poolForSeries,
-} from "@/lib/gacha/steamPools";
+import { getFreeStandardOpensAfterUtcSync } from "@/lib/economy/syncUtc";
+import { fetchOneNewCard, openPackFromPool } from "@/lib/gacha/openPackBrowser";
+import { type CardSeries, isSeriesPacksAvailable } from "@/lib/gacha/steamPools";
 import { packCoinCost, type PackKind } from "@/lib/gacha/packKinds";
 import { isRarePlus, rarityTier } from "@/lib/gacha/stats";
 import type { SteamCard } from "@/lib/gacha/types";
@@ -59,7 +50,6 @@ export function PackOpener() {
   const packRef = useRef<HTMLDivElement>(null);
   const [deckKey, setDeckKey] = useState(0);
   const lastPullIdRef = useRef<string | null>(null);
-  const lastOpenPoolRef = useRef<number[]>(POOL_SERIES_1);
   const lastPackKindRef = useRef<PackKind>("standard");
   /** Серия/тип на момент открытия (для реролла на сервере — не текущий выбор в UI). */
   const lastOpenContextRef = useRef<{ series: CardSeries; packKind: PackKind }>({
@@ -106,13 +96,10 @@ export function PackOpener() {
     ? getFreeStandardOpensAfterUtcSync(state)
     : getFreeStandardOpensAfterSync(state);
   const coinPrice = packCoinCost(packKind);
-  const atPackDailyCap = serverAuthoritative
-    ? isAtPackOpensDailyCapUtc(state)
-    : isAtPackOpensDailyCap(state);
   const canOpenPack =
     coinPrice === null
-      ? freeTotal > 0 && !atPackDailyCap
-      : state.coins >= coinPrice && !atPackDailyCap;
+      ? freeTotal > 0
+      : state.coins >= coinPrice;
 
   const dismissDeck = useCallback(() => {
     setCards(null);
@@ -147,10 +134,6 @@ export function PackOpener() {
 
     if (!serverAuthoritative) {
       const live = loadState();
-      if (isAtPackOpensDailyCap(live)) {
-        setError(t("pack.errPackUnavailable"));
-        return;
-      }
       if (openCost === null) {
         if (getFreeStandardOpensAfterSync(live) <= 0) {
           setError(
@@ -172,8 +155,6 @@ export function PackOpener() {
     setPhase("loading");
     void playPackLoadingSound().catch(() => {});
 
-    const effectivePool = poolForSeries(series);
-    lastOpenPoolRef.current = effectivePool;
     lastPackKindRef.current = packKind;
     lastOpenContextRef.current = { series, packKind };
 
@@ -193,8 +174,7 @@ export function PackOpener() {
         };
         if (!res.ok) {
           setPhase("idle");
-          if (j.error === "pack_cap") setError(t("pack.errPackUnavailable"));
-          else if (j.error === "series_unavailable")
+          if (j.error === "series_unavailable")
             setError(t("pack.series2Soon"));
           else if (j.error === "no_free")
             setError(t("pack.errStandardExhausted", { max: FREE_PACKS_PER_DAY }));
@@ -233,15 +213,10 @@ export function PackOpener() {
         const rng = Math.random;
         const live = loadState();
         const forcePity = live.pity.packsSinceRarePlus >= PITY_PACKS;
-        const result = await openPackFromPool(
-          effectivePool,
-          rng,
-          origin,
-          {
-            packKind,
-            forcePityRarePlus: forcePity,
-          },
-        );
+        const result = await openPackFromPool(series, rng, origin, {
+          packKind,
+          forcePityRarePlus: forcePity,
+        });
 
         const pullId = crypto.randomUUID();
         lastPullIdRef.current = pullId;
@@ -345,7 +320,7 @@ export function PackOpener() {
       const idx = Math.floor(rng() * current.length);
       const oldCard = current[idx]!;
       const newCard = await fetchOneNewCard(
-        lastOpenPoolRef.current,
+        lastOpenContextRef.current.series,
         rng,
         origin,
         exclude,
@@ -512,7 +487,7 @@ export function PackOpener() {
                 );
               })}
             </div>
-            {cards && cards.length > 0 ? (
+            {phase === "opened" && cards && cards.length > 0 ? (
               <PackDeck
                 key={deckKey}
                 cards={cards}
@@ -536,7 +511,10 @@ export function PackOpener() {
           <span className="relative">{buttonLabel}</span>
         </button>
 
-        {cards && cards.length > 0 && lastPullIdRef.current ? (
+        {phase === "opened" &&
+        cards &&
+        cards.length > 0 &&
+        lastPullIdRef.current ? (
           <button
             type="button"
             disabled={

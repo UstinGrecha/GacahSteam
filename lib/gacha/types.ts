@@ -1,3 +1,5 @@
+import type { CardTraitRoll } from "./cardTraits/types";
+
 /** `holo` = HR / ZR в терминологии TCG: высокий голографический тир между SR и UR. */
 export type Rarity =
   | "common"
@@ -5,7 +7,9 @@ export type Rarity =
   | "rare"
   | "epic"
   | "holo"
-  | "legend";
+  | "legend"
+  /** Трофей рейда (выше UR); не выпадает из паков. */
+  | "champion";
 
 export type AppMetrics = {
   positivePercent: number;
@@ -43,4 +47,6 @@ export type SteamCard = {
   reviewScoreDesc: string | null;
   /** Жанры из Steam (описания), могут быть пустыми */
   genres: string[];
+  /** Пассивные свойства коллекционной карты. */
+  traits: CardTraitRoll[];
 };

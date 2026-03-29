@@ -8,6 +8,7 @@ const RARITY_ORDER: Rarity[] = [
   "epic",
   "holo",
   "legend",
+  "champion",
 ];
 
 export type CollectionStats = {

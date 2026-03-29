@@ -1,3 +1,14 @@
+import {
+  getCardTraitDef,
+  rollCardTraitsForCard,
+} from "@/lib/gacha/cardTraits";
+import type { CardTraitRoll } from "@/lib/gacha/cardTraits/types";
+import {
+  isRaidBossRewardAppid,
+  rollTrophyCombatStat,
+  TROPHY_COMBAT_STAT_MAX,
+  TROPHY_COMBAT_STAT_MIN,
+} from "@/lib/gacha/raidReward";
 import { computeStrictRarityForPersist } from "@/lib/gacha/rarityStrict";
 import {
   clamp,
@@ -46,6 +57,28 @@ export function migrateGuestSaveToUserIfNeeded(userId: string): void {
   }
 }
 
+function normalizeStoredTraits(
+  raw: unknown,
+  appid: number,
+  rarity: SteamCard["rarity"],
+): CardTraitRoll[] {
+  if (!Array.isArray(raw) || raw.length === 0) {
+    return rollCardTraitsForCard(appid, rarity);
+  }
+  const out: CardTraitRoll[] = [];
+  for (const row of raw) {
+    if (out.length >= 4) break;
+    if (row == null || typeof row !== "object") continue;
+    const o = row as Record<string, unknown>;
+    const id = typeof o.id === "string" ? o.id : "";
+    const potencyRaw = typeof o.potency === "number" ? o.potency : Number(o.potency);
+    if (!getCardTraitDef(id) || !Number.isFinite(potencyRaw)) continue;
+    const potency = Math.round(Math.min(99, Math.max(1, potencyRaw)));
+    out.push({ id, potency });
+  }
+  return out.length > 0 ? out : rollCardTraitsForCard(appid, rarity);
+}
+
 function cardToMetrics(c: SteamCard): AppMetrics {
   const rc = c.reviewCount < 0 ? 0 : Math.max(0, Math.floor(c.reviewCount));
   const rd =
@@ -69,6 +102,7 @@ function normalizeSteamCard(c: SteamCard): SteamCard {
     reviewCount?: number;
     reviewScoreDesc?: string | null;
     releaseDateMs?: number | null;
+    traits?: unknown;
   };
   const hasNewReviewFields =
     typeof raw.hasUserReviews === "boolean" &&
@@ -98,10 +132,42 @@ function normalizeSteamCard(c: SteamCard): SteamCard {
   };
 
   const metrics = cardToMetrics(base);
-  const rarity = computeStrictRarityForPersist(metrics);
+  const rarity: SteamCard["rarity"] =
+    isRaidBossRewardAppid(base.appid)
+      ? "champion"
+      : computeStrictRarityForPersist(metrics);
   const [lo, hi] = rarityScoreBounds(rarity);
-  const score = clamp(computeScore(metrics), lo, hi);
-  const { atk, def, hp } = computeCombatStats(score, metrics, rarity);
+  const baseScore =
+    rarity === "champion" &&
+    typeof c.score === "number" &&
+    Number.isFinite(c.score)
+      ? c.score
+      : computeScore(metrics);
+  const score = clamp(baseScore, lo, hi);
+  let atk: number;
+  let def: number;
+  let hp: number;
+  if (rarity === "champion") {
+    const inRange = (n: unknown): n is number =>
+      typeof n === "number" &&
+      Number.isFinite(n) &&
+      n >= TROPHY_COMBAT_STAT_MIN &&
+      n <= TROPHY_COMBAT_STAT_MAX;
+    if (inRange(c.atk) && inRange(c.def) && inRange(c.hp)) {
+      atk = Math.round(c.atk);
+      def = Math.round(c.def);
+      hp = Math.round(c.hp);
+    } else {
+      atk = rollTrophyCombatStat();
+      def = rollTrophyCombatStat();
+      hp = rollTrophyCombatStat();
+    }
+  } else {
+    const s = computeCombatStats(score, metrics, rarity);
+    atk = s.atk;
+    def = s.def;
+    hp = s.hp;
+  }
 
   return {
     ...base,
@@ -116,6 +182,7 @@ function normalizeSteamCard(c: SteamCard): SteamCard {
       raw.reviewScoreDesc.trim() !== ""
         ? raw.reviewScoreDesc.trim()
         : null,
+    traits: normalizeStoredTraits(raw.traits, base.appid, rarity),
   };
 }
 
@@ -141,6 +208,7 @@ export function defaultState(): StoredState {
     spareCopies: {},
     pityActivations: 0,
     salvageCount: 0,
+    raid: { lastRewardWeekKey: null },
   };
 }
 
@@ -204,6 +272,13 @@ function parseStoredStateRecord(raw: Partial<StoredStateV2>): StoredState {
       typeof raw.pityActivations === "number" ? raw.pityActivations : 0,
     salvageCount:
       typeof raw.salvageCount === "number" ? raw.salvageCount : 0,
+    raid:
+      raw.raid &&
+      typeof raw.raid === "object" &&
+      (typeof raw.raid.lastRewardWeekKey === "string" ||
+        raw.raid.lastRewardWeekKey === null)
+        ? { lastRewardWeekKey: raw.raid.lastRewardWeekKey }
+        : { lastRewardWeekKey: null },
   };
   if (Object.keys(state.spareCopies).length === 0 && pulls.length > 0) {
     rebuildSpareCopiesFromPulls(state);
@@ -253,6 +328,7 @@ function migrateFromV1(parsed: {
     spareCopies: {},
     pityActivations: 0,
     salvageCount: 0,
+    raid: { lastRewardWeekKey: null },
   };
   rebuildSpareCopiesFromPulls(state);
   normalizePullsCards(state);

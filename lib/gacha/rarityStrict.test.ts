@@ -25,10 +25,14 @@ describe("rarityFromReviewMassOnly / rarityTierIndexFromReviews", () => {
     expect(rarityFromReviewMassOnly(279)).toBe("common");
     expect(rarityFromReviewMassOnly(280)).toBe("uncommon");
     expect(rarityFromReviewMassOnly(7_000)).toBe("rare");
-    expect(rarityFromReviewMassOnly(38_000)).toBe("epic");
-    expect(rarityFromReviewMassOnly(125_000)).toBe("holo");
-    expect(rarityFromReviewMassOnly(400_000)).toBe("legend");
-    expect(rarityTierIndexFromReviews(38_000)).toBe(3);
+    expect(rarityFromReviewMassOnly(38_000)).toBe("rare");
+    expect(rarityFromReviewMassOnly(55_000)).toBe("epic");
+    expect(rarityFromReviewMassOnly(94_999)).toBe("epic");
+    expect(rarityFromReviewMassOnly(95_000)).toBe("holo");
+    expect(rarityFromReviewMassOnly(229_999)).toBe("holo");
+    expect(rarityFromReviewMassOnly(230_000)).toBe("legend");
+    expect(rarityFromReviewMassOnly(1_000_000)).toBe("legend");
+    expect(rarityTierIndexFromReviews(38_000)).toBe(2);
   });
 });
 
@@ -51,10 +55,35 @@ describe("computeStrictRarity", () => {
     ).toBe("common");
   });
 
-  it("mega-hit by reviews is legend (age does not lower)", () => {
+  it("strong hits by reviews: holo from mass, legend from top mass", () => {
+    const recent = Date.now() - 2 * 365.25 * 24 * 3600 * 1000;
     expect(
       computeStrictRarity(
-        template({ reviewCount: 500_000 }),
+        template({ reviewCount: 120_000, releaseDateMs: recent }),
+        ctxOk,
+      ),
+    ).toBe("holo");
+    expect(
+      computeStrictRarity(
+        template({ reviewCount: 350_000, releaseDateMs: recent }),
+        ctxOk,
+      ),
+    ).toBe("legend");
+    expect(
+      computeStrictRarity(
+        template({ reviewCount: 500_000, releaseDateMs: recent }),
+        ctxOk,
+      ),
+    ).toBe("legend");
+    expect(
+      computeStrictRarity(template({ reviewCount: 1_200_000 }), ctxOk),
+    ).toBe("legend");
+  });
+
+  it("missing release date: 200k+ reviews can still reach legend via +tier", () => {
+    expect(
+      computeStrictRarity(
+        template({ reviewCount: 215_000, releaseDateMs: null }),
         ctxOk,
       ),
     ).toBe("legend");

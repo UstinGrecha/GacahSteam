@@ -14,6 +14,7 @@ const T_RARE = 57;
 const T_EPIC = 72;
 const T_HOLO = 80;
 const T_LEGEND = 88;
+const T_CHAMPION = 94;
 
 const RARITY_ORDER: Rarity[] = [
   "common",
@@ -22,6 +23,7 @@ const RARITY_ORDER: Rarity[] = [
   "epic",
   "holo",
   "legend",
+  "champion",
 ];
 
 export function rarityTier(r: Rarity): number {
@@ -31,6 +33,13 @@ export function rarityTier(r: Rarity): number {
 /** Более низкий тир из двух. */
 export function minRarityByTier(a: Rarity, b: Rarity): Rarity {
   return RARITY_ORDER[Math.min(rarityTier(a), rarityTier(b))];
+}
+
+/** На шаг ниже по лестнице редкости; с common — null. */
+export function rarityOneStepDown(r: Rarity): Rarity | null {
+  const i = rarityTier(r);
+  if (i <= 0) return null;
+  return RARITY_ORDER[i - 1]!;
 }
 
 /** Индекс тира 0…5 → редкость (для лестницы отзывов + возраст релиза). */
@@ -46,7 +55,8 @@ export function rarityScoreBounds(r: Rarity): [number, number] {
     rare: [T_RARE, T_EPIC - 1],
     epic: [T_EPIC, T_HOLO - 1],
     holo: [T_HOLO, T_LEGEND - 1],
-    legend: [T_LEGEND, 100],
+    legend: [T_LEGEND, T_CHAMPION - 1],
+    champion: [T_CHAMPION, 100],
   };
   return bands[r];
 }
@@ -58,6 +68,7 @@ export function computeScore(m: AppMetrics): number {
 
 /** Маппинг числа на тир (нормализация сохранений, тесты). Редкость карты — отзывы + дата релиза (rarityStrict). */
 export function scoreToRarity(score: number): Rarity {
+  if (score >= T_CHAMPION) return "champion";
   if (score >= T_LEGEND) return "legend";
   if (score >= T_HOLO) return "holo";
   if (score >= T_EPIC) return "epic";
@@ -109,6 +120,7 @@ const RARITY_ATK_BONUS: Record<Rarity, number> = {
   epic: 19,
   holo: 25,
   legend: 30,
+  champion: 38,
 };
 
 const RARITY_DEF_BONUS: Record<Rarity, number> = {
@@ -118,6 +130,7 @@ const RARITY_DEF_BONUS: Record<Rarity, number> = {
   epic: 16,
   holo: 22,
   legend: 26,
+  champion: 32,
 };
 
 /** HP из итоговых атаки/защиты и score (после бонусов редкости). */

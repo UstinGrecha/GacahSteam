@@ -17,6 +17,8 @@ export type Messages = {
     brand: string;
     pack: string;
     profile: string;
+    raid: string;
+    market: string;
     collection: string;
     stats: string;
     achievements: string;
@@ -90,6 +92,7 @@ export type Messages = {
     epic: string;
     holo: string;
     legend: string;
+    champion: string;
   };
   gameCard: {
     baseGame: string;
@@ -107,6 +110,8 @@ export type Messages = {
     store: string;
     /** Запасной подпись в блоке метрик, без товарного знака */
     metricsFallback: string;
+    /** Заголовок блока пассивных свойств карты */
+    traits: string;
   };
   pack: {
     kindLabel: string;
@@ -176,6 +181,9 @@ export type Messages = {
     packHistory: string;
     cardsWord: string;
     uniqueAbbr: string;
+    carouselPrev: string;
+    carouselNext: string;
+    carouselSwipeHint: string;
   };
   stats: {
     title: string;
@@ -212,6 +220,87 @@ export type Messages = {
     resetButton: string;
     confirmReset: string;
     msgReset: string;
+  };
+  raid: {
+    title: string;
+    subtitle: string;
+    week: string;
+    bossHeading: string;
+    bossHp: string;
+    bossAtk: string;
+    bossDef: string;
+    squadTitle: string;
+    squadHint: string;
+    selected: string;
+    toggleSelect: string;
+    start: string;
+    nextStep: string;
+    autoPlay: string;
+    stopAuto: string;
+    reset: string;
+    emptyCollection: string;
+    needFive: string;
+    logTitle: string;
+    victory: string;
+    defeat: string;
+    phaseHeroes: string;
+    phaseBoss: string;
+    round: string;
+    bossPhaseWarn: string;
+    heroAttack: string;
+    bossHit: string;
+    bossNames: Record<string, string>;
+    enrageBanner: string;
+    enrageBar: string;
+    summaryTitle: string;
+    summaryTotalDmg: string;
+    summaryMvp: string;
+    summaryHeals: string;
+    summaryHeroAttacks: string;
+    summaryBossPhases: string;
+    squadStrip: string;
+    traitsHint: string;
+    logHeal: string;
+    logEnrageActive: string;
+    speedNormal: string;
+    speedFast: string;
+    rewardTitle: string;
+    rewardBody: string;
+    rewardFail: string;
+    rewardAlready: string;
+    rewardPoolMissing: string;
+    rewardCardFallback: string;
+    rarityFilter: string;
+    noCardsThisRarity: string;
+  };
+  market: {
+    title: string;
+    subtitle: string;
+    browse: string;
+    myOffers: string;
+    sell: string;
+    buy: string;
+    price: string;
+    seller: string;
+    cancel: string;
+    loginToTrade: string;
+    loadError: string;
+    empty: string;
+    listTitle: string;
+    priceHint: string;
+    listButton: string;
+    listed: string;
+    bought: string;
+    cancelled: string;
+    ownBadge: string;
+    needLoginBuy: string;
+    needCoins: string;
+    gone: string;
+    tooManyListings: string;
+    selectCardHint: string;
+    close: string;
+    refresh: string;
+    sellNeedsServer: string;
   };
 };
 

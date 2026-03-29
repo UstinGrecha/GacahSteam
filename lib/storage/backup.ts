@@ -55,6 +55,13 @@ export function parseStoredStateJson(text: string): StoredState | null {
         typeof r.pityActivations === "number" ? r.pityActivations : 0,
       salvageCount:
         typeof r.salvageCount === "number" ? r.salvageCount : 0,
+      raid:
+        r.raid &&
+        typeof r.raid === "object" &&
+        (typeof r.raid.lastRewardWeekKey === "string" ||
+          r.raid.lastRewardWeekKey === null)
+          ? { lastRewardWeekKey: r.raid.lastRewardWeekKey }
+          : { lastRewardWeekKey: null },
     };
     normalizePullsCards(state);
     economySync(state);

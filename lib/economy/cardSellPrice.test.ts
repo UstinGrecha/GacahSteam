@@ -20,6 +20,7 @@ function card(rarity: Rarity, atk: number, def: number, hp: number): SteamCard {
     releaseDateMs: null,
     genres: [],
     reviewScoreDesc: null,
+    traits: [],
   };
 }
 
@@ -28,6 +29,12 @@ describe("cardSellCoins", () => {
     const c = card("common", 10, 10, 10);
     const l = card("legend", 10, 10, 10);
     expect(cardSellCoins(l)).toBeGreaterThan(cardSellCoins(c));
+  });
+
+  it("is higher for champion than legend at same stats", () => {
+    const l = card("legend", 10, 10, 10);
+    const u = card("champion", 10, 10, 10);
+    expect(cardSellCoins(u)).toBeGreaterThan(cardSellCoins(l));
   });
 
   it("increases with combat sum", () => {

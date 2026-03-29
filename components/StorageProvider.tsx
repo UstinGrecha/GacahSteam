@@ -50,6 +50,7 @@ function cloneState(s: StoredState): StoredState {
     hourly: { ...s.hourly },
     pity: { ...s.pity },
     spareCopies: { ...s.spareCopies },
+    raid: s.raid ? { ...s.raid } : { lastRewardWeekKey: null },
   };
 }
 

@@ -17,9 +17,31 @@ model User {
   image         String?
   /// Хэш пароля (bcrypt); null если только OAuth
   passwordHash  String?
-  accounts      Account[]
-  sessions      Session[]
-  gameSave      GameSave?
+  accounts        Account[]
+  sessions        Session[]
+  authenticators  Authenticator[]
+  gameSave        GameSave?
+  marketSales     MarketListing[] @relation("MarketSeller")
+  marketBuys      MarketListing[] @relation("MarketBuyer")
+}
+
+/// Лот P2P-маркета: карта из инвентаря продавца (cardJson) за монеты.
+model MarketListing {
+  id         String    @id @default(cuid())
+  sellerId   String
+  buyerId    String?
+  priceCoins Int
+  /// JSON одной SteamCard
+  cardJson   String
+  status     String    @default("active")
+  createdAt  DateTime  @default(now())
+  soldAt     DateTime?
+
+  seller User  @relation("MarketSeller", fields: [sellerId], references: [id], onDelete: Cascade)
+  buyer  User? @relation("MarketBuyer", fields: [buyerId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([sellerId, status])
 }
 
 /// Авторитетный прогресс игры на сервере (антижульничество для залогиненных).
@@ -38,6 +60,33 @@ model SteamAppDetailsCache {
   appid       Int      @id
   payloadJson String
   updatedAt   DateTime @updatedAt
+}
+
+/// Полный ответ Steam для appid в рамках серии — источник для открытия паков на сервере без запросов к Steam.
+model SteamPoolEntry {
+  appid       Int      @id
+  series      Int
+  payloadJson String
+  updatedAt   DateTime @updatedAt
+
+  @@index([series])
+}
+
+/// WebAuthn / Passkeys — требуется для @auth/prisma-adapter (иначе p.authenticator undefined).
+model Authenticator {
+  id                   String   @id @default(cuid())
+  credentialID         String   @unique
+  userId               String
+  providerAccountId    String
+  counter              Int
+  credentialPublicKey  String
+  credentialBackedUp   Boolean
+  credentialDeviceType String
+  transports           String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 model Account {

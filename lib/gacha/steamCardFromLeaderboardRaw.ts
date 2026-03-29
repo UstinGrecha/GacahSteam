@@ -1,4 +1,6 @@
+import { getCardTraitDef, rollCardTraitsForCard } from "@/lib/gacha/cardTraits";
 import type { Rarity, SteamCard } from "@/lib/gacha/types";
+import type { CardTraitRoll } from "@/lib/gacha/cardTraits/types";
 
 const RARITIES = new Set<Rarity>([
   "common",
@@ -7,6 +9,7 @@ const RARITIES = new Set<Rarity>([
   "epic",
   "holo",
   "legend",
+  "champion",
 ]);
 
 function asRarity(x: unknown): Rarity {
@@ -45,12 +48,27 @@ export function steamCardFromLeaderboardRaw(
       ? o.storeUrl
       : `https://store.steampowered.com/app/${appid}/`;
 
+  const rarity = asRarity(o.rarity);
+  let traits: CardTraitRoll[] = [];
+  if (Array.isArray(o.traits)) {
+    for (const row of o.traits) {
+      if (traits.length >= 4) break;
+      if (row == null || typeof row !== "object") continue;
+      const tr = row as Record<string, unknown>;
+      const tid = typeof tr.id === "string" ? tr.id : "";
+      const p = typeof tr.potency === "number" ? tr.potency : Number(tr.potency);
+      if (!tid || !getCardTraitDef(tid) || !Number.isFinite(p)) continue;
+      traits.push({ id: tid, potency: Math.round(Math.min(99, Math.max(1, p))) });
+    }
+  }
+  if (traits.length === 0) traits = rollCardTraitsForCard(appid, rarity);
+
   return {
     appid,
     name,
     headerImage,
     storeUrl,
-    rarity: asRarity(o.rarity),
+    rarity,
     atk,
     def,
     hp,
@@ -81,5 +99,6 @@ export function steamCardFromLeaderboardRaw(
     genres: Array.isArray(o.genres)
       ? o.genres.filter((g): g is string => typeof g === "string")
       : [],
+    traits,
   };
 }

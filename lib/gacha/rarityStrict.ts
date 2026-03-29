@@ -1,7 +1,7 @@
 import { isSteamAppReleased } from "@/lib/steam/parse";
 import type { SteamAppDetailsData } from "@/lib/steam/types";
 import type { AppMetrics, Rarity } from "./types";
-import { clamp, rarityAtTierIndex } from "./stats";
+import { clamp, rarityAtTierIndex, rarityTier } from "./stats";
 
 export type StrictRarityContext = {
   comingSoon: boolean;
@@ -23,12 +23,16 @@ export function strictContextFromSteamData(
   };
 }
 
-/** Индекс тира 0…5 только по объёму отзывов. */
+/**
+ * Индекс тира 0…5 только по объёму отзывов.
+ * Верхние тиры под реальный Steam-пул: «легенда» — сильные хиты (≈230k+ отзывов),
+ * а не только 1M+, иначе в выборке из тысяч appid нет ни одной legend.
+ */
 export function rarityTierIndexFromReviews(reviewCount: number): number {
   const rc = Math.max(0, reviewCount);
-  if (rc >= 400_000) return 5;
-  if (rc >= 125_000) return 4;
-  if (rc >= 38_000) return 3;
+  if (rc >= 230_000) return 5;
+  if (rc >= 95_000) return 4;
+  if (rc >= 55_000) return 3;
   if (rc >= 7_000) return 2;
   if (rc >= 280) return 1;
   return 0;
@@ -56,20 +60,26 @@ function releaseAgeTierDelta(
   ageYears: number | null,
   reviewCount: number,
 ): number {
-  if (ageYears == null) return 0;
   const rc = Math.max(0, reviewCount);
+
+  if (ageYears == null) {
+    /** Нет даты: сильный хит чуть ниже порога legend может получить +1 (аналог «классики»). */
+    return rc >= 200_000 && rc < 230_000 ? 1 : 0;
+  }
+
   let d = 0;
 
   if (ageYears < 0.42 && rc < 500) d -= 1;
   if (ageYears < 0.25 && rc < 200) d -= 1;
 
-  if (ageYears < 1 && rc >= 15_000) d += 1;
+  if (ageYears < 1 && rc >= 18_000) d += 1;
 
-  if (ageYears >= 4 && rc >= 600) d += 1;
-  if (ageYears >= 8 && rc >= 2_000) d += 1;
-  if (ageYears >= 14 && rc >= 8_000) d += 1;
+  if (ageYears >= 4 && rc >= 2_000) d += 1;
+  if (ageYears >= 8 && rc >= 5_000) d += 1;
+  if (ageYears >= 14 && rc >= 20_000) d += 1;
 
-  return clamp(d, -2, 2);
+  /** Не даём возрасту поднять карту сразу на два верхних тира подряд. */
+  return clamp(d, -2, 1);
 }
 
 export function computeStrictRarity(
@@ -81,7 +91,9 @@ export function computeStrictRarity(
   const base = rarityTierIndexFromReviews(m.reviewCount);
   const age = yearsSinceReleaseMs(m.releaseDateMs);
   const delta = releaseAgeTierDelta(age, m.reviewCount);
-  return rarityAtTierIndex(base + delta);
+  /** `champion` не из Steam-строгости — только трофей рейда. */
+  const capped = Math.min(base + delta, rarityTier("legend"));
+  return rarityAtTierIndex(capped);
 }
 
 export function computeStrictRarityForPersist(m: AppMetrics): Rarity {

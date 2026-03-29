@@ -2,8 +2,6 @@ import {
   DAILY_LOGIN_COINS,
   FREE_PACKS_PER_DAY,
   HOURLY_PACK_CATCH_UP_HOURS,
-  HOURLY_PACK_MAX_BANK,
-  PACK_OPENS_DAILY_CAP,
 } from "@/lib/economy/constants";
 import type { StoredState } from "@/lib/storage/types";
 
@@ -24,7 +22,12 @@ export function monotonicUtcHourIndex(d = new Date()): number {
   return Math.floor(d.getTime() / 3_600_000);
 }
 
-/** Сброс дня и почасовой банк по UTC. */
+function maxHourlyBankForUsed(freePacksUsed: number): number {
+  const dailyLeft = Math.max(0, FREE_PACKS_PER_DAY - freePacksUsed);
+  return Math.max(0, FREE_PACKS_PER_DAY - dailyLeft);
+}
+
+/** Сброс дня по UTC, +1 пак в банк за час (суммарно с дневным остатком ≤ 8). */
 export function economySyncUtc(state: StoredState): void {
   const today = utcCalendarDay();
   if (state.daily.date !== today) {
@@ -34,20 +37,21 @@ export function economySyncUtc(state: StoredState): void {
   }
   if (!state.hourly) {
     state.hourly = { lastHourIndex: monotonicUtcHourIndex(), bank: 0 };
-    return;
   }
+  const used =
+    state.daily.date === today ? state.daily.freePacksUsed : 0;
+  const cap = maxHourlyBankForUsed(used);
+
   const nowIdx = monotonicUtcHourIndex();
   const delta = Math.max(
     0,
     Math.min(nowIdx - state.hourly.lastHourIndex, HOURLY_PACK_CATCH_UP_HOURS),
   );
   if (delta > 0) {
-    state.hourly.bank = Math.min(
-      state.hourly.bank + delta,
-      HOURLY_PACK_MAX_BANK,
-    );
+    state.hourly.bank = Math.min(state.hourly.bank + delta, cap);
     state.hourly.lastHourIndex = nowIdx;
   }
+  state.hourly.bank = Math.min(state.hourly.bank, cap);
 }
 
 export function getFreeStandardOpensAfterUtcSync(state: StoredState): number {
@@ -56,11 +60,6 @@ export function getFreeStandardOpensAfterUtcSync(state: StoredState): number {
     state.daily.date === today ? state.daily.freePacksUsed : 0;
   const dailyLeft = Math.max(0, FREE_PACKS_PER_DAY - used);
   return dailyLeft + (state.hourly?.bank ?? 0);
-}
-
-export function isAtPackOpensDailyCapUtc(state: StoredState): boolean {
-  if (state.daily.date !== utcCalendarDay()) return false;
-  return state.daily.packsOpenedToday >= PACK_OPENS_DAILY_CAP;
 }
 
 export function consumeStandardFreePackUtc(state: StoredState): void {
